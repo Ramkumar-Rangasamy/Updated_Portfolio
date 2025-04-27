@@ -1,0 +1,38 @@
+.dashboard-container {
+  display: flex;
+  min-height: fit-content; 
+  overflow: hidden; 
+  transition: all 0.3s ease-in-out;
+  flex-direction: row; 
+}
+
+
+/* Overlay for the sidebar when open */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.838); 
+  z-index: 1001;
+  pointer-events: auto;
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+}
+
+
+
+/* Main content section */
+.main-content {
+  flex: 1;
+  height: 100vh; 
+  overflow-y: auto; 
+  transition: margin 0.3s ease-in-out;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: transparent; 
+}
+
+
+

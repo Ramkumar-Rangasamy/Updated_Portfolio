@@ -1,0 +1,239 @@
+:root {
+  --primary-color: #4E6BFF;
+  --secondary-color: #dbe2ec;
+  --accent-color: #CBE4F5;
+  --highlight: #f5a623;
+  --text-dark: #183B56;
+
+  --font-xl: 4rem;
+  --font-lg: 2.8rem;
+  --font-md: 1.8rem;
+  --font-sm: 1.2rem;
+
+  --btn-radius: 30px;
+  --transition-fast: 0.3s ease;
+  --transition-smooth: 0.35s ease;
+}
+
+.availability-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin:0px 5px 0 5px ;
+}
+
+.status-dot {
+  width: 12px;
+  height: 12px;
+  background-color: var(--highlight);
+  border-radius: 50%;
+  animation: pulse 1s ease-in-out infinite;
+  will-change: transform, opacity;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.3);
+    opacity: 1;
+  }
+}
+
+.status-text {
+  font-weight: 600;
+  font-size: 14px;
+  color: var( --text-dark);
+}
+
+.role-text {
+  font-weight: 500;
+  color: var(--primary-color);
+  font-size: 14px;
+  animation: fadeSlide 2.4s ease-in-out infinite;
+  will-change: transform, opacity;
+}
+
+@keyframes fadeSlide {
+  0% {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  20%, 80% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+}
+
+.home-banner-01 {
+  background-image: url("../../../../Assets/homebackground.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding:2rem;
+  min-height: 100vh;
+}
+
+.hs-hello {
+  font-weight: 800;
+  font-size: clamp(2rem, 5vw, 40px);
+  color: var(--text-dark);
+}
+
+.hs-name {
+  font-weight: 800;
+  font-size: clamp(2rem, 7vw, var(--font-xl));
+  color: var(--text-dark);
+}
+
+.hs-role {
+  font-size: clamp(1.1rem, 4vw, var(--font-md));
+  font-weight: 500;
+  line-height: 1.25;
+  color: var(--text-dark);
+}
+
+.hs-role .hs-role-span {
+  color: var(--primary-color);
+}
+
+.px-btn {
+  padding: 0 50px 0 20px;
+  line-height: 60px;
+  position: relative;
+  display: inline-block;
+  color: var(--text-dark);
+  background: none;
+  border: none;
+  transition: color var(--transition-fast);
+  text-decoration: none;
+}
+
+.px-btn:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  border-radius: var(--btn-radius);
+  background: transparent;
+  border: 1px solid var(--accent-color);
+  border-right: 1px solid transparent;
+  transition: all var(--transition-smooth);
+  width: 60px;
+  height: 60px;
+  z-index: 0;
+}
+
+.px-btn:hover:before {
+  background: var(--accent-color);
+  width: 83%;
+  border-color: var(--accent-color);
+}
+
+.px-btn:hover {
+  color: var(--primary-color);
+}
+
+.px-btn span,
+.px-btn .arrow {
+  position: relative;
+  z-index: 1;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.px-btn .arrow {
+  margin-left: 10px;
+  vertical-align: middle;
+}
+
+.profile-container {
+  background-color: var(--secondary-color);
+  padding: 10px;
+  border: 1.5px solid var(--primary-color);
+  border-radius: 50px 5px 50px 5px;
+  contain: layout;
+}
+
+.profile-img {
+  border-top-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+  object-fit: cover;
+}
+
+.role-explian-content {
+  background-color: var(--secondary-color);
+  border: 1.5px solid var(--primary-color);
+  padding: 10px 30px;
+  border-radius: 5px;
+}
+
+.role-explian-content h5 {
+  font-size: 1rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 998px) {
+  .home-banner-01 {
+    padding:0;
+    min-height: auto;
+  }
+
+  .mobileview-style {
+    text-align: center;
+    margin-bottom: 5rem;
+  }
+  
+  .profile-container{
+    border-radius:50%;
+    margin:1rem 2rem;
+  }
+  
+  .profile-img{
+    border-radius:50%;
+  }
+
+  .mobile-tyle-btn-btns {
+    justify-content: center;
+    gap:20px;
+  }
+  
+  .px-btn:hover:before {
+    width: 89%;
+  }
+}
+
+@media (max-width: 768px) {
+  .availability-container{
+    margin:10px 0 20px 6px ;
+  }
+  .hs-hello {
+    font-size: clamp(1.5rem, 5vw, 2rem);
+  }
+
+  .hs-name {
+    font-size: clamp(2rem, 7vw, var(--font-lg));
+  }
+
+  .hs-role {
+    font-size: clamp(1rem, 4vw, var(--font-md));
+  }
+
+  .px-btn {
+    padding: 0 25px 0 10px;
+    line-height: 50px;
+  }
+
+  .px-btn:before {
+    width: 50px;
+    height: 50px;
+  }
+}
+  

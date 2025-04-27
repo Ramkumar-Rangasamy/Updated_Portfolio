@@ -1,0 +1,164 @@
+/* Define root-level variables for colors, animation durations, and sizes */
+:root {
+  --sidebar-width: 280px;
+  --sidebar-mobile-repsonsives-width: 260px;
+  --sidebar-bg: #F7FAFF;
+  --text-color: #183B56;
+  --highlight-color: #4E6BFF;
+  --font-size-large: 20px;
+  --font-size-small: 16px;
+  --font-size-large-mobile: 16px;
+  --react-icon-size: 30px;
+  --transition-duration: 0.3s;
+  --animation-duration: 4s;
+  --gradient-start: #667eea;
+  --gradient-mid: #764ba2;
+  --gradient-end: #0f1a2b;
+}
+
+/* Sidebar styles */
+.sidebar {
+  width: var(--sidebar-width);
+  background-color: var(--sidebar-bg);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  color: var(--text-color);
+  padding: 1rem;
+  z-index: 1002;
+  transition: all 0.5s ease-out;
+}
+
+/* Sidebar Header */
+.sidebar-header {
+  display: flex;
+  justify-content: flex-end;
+  padding: 2px;
+}
+
+.sidebar-header .close-icon {
+  display: none;
+  cursor: pointer;
+}
+
+.sidebar-header .close-icon:hover{
+  color: var(--highlight-color);
+}
+
+/* Logo Container Styling */
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap:20px;
+  padding: 13px 0;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.082);
+  transform: translateY(-5px);
+  transition: all 0.3s ease;
+  background: linear-gradient(120deg, #EDF3FF, #dfe8f5, #FFFFFF);
+  background-size: 300% 300%;
+  animation: gradientMove 5s ease infinite; 
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+.r-icons-style{
+  color: var(--text-color);
+  font-size:var( --react-icon-size);
+}
+
+.logo-container h2 {
+  font-size: var(--font-size-large);
+  color: var(--text-color); 
+  font-weight: 600; 
+  margin-bottom: 0;
+  letter-spacing: 1px; 
+  text-transform: uppercase;
+}
+
+
+/* Sidebar Menu */
+.sidebar-menu {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 3rem 1.5rem;
+  cursor: pointer;
+  font-size: var(--font-size-small);
+  font-weight: 400;
+  color: var(--text-color);
+  transition: all var(--transition-duration) ease;
+}
+
+/* Hover and Active State */
+.sidebar-item:hover,
+.sidebar-item.active {
+  color: var(--highlight-color);
+  font-weight: 600;
+}
+
+/* Optional: Align SVG icons properly */
+.sidebar-items-icons svg {
+  display: block;
+}
+
+/* Desktop and Larger Screens */
+@media (min-width: 1301px) {
+  .sidebar {
+    transform: translateX(0) !important;
+    position: relative;
+  }
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: var(--sidebar-mobile-repsonsives-width);
+    transform: translateX(-100%);
+    height: 100vh;
+    margin: 0;
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+  }
+
+  .sidebar:not(.open) {
+    transform: translateX(-100%);
+  }
+
+  .sidebar-header .close-icon {
+    display: block;
+  }
+
+  .sidebar-item {
+    margin: 2.5rem 1.5rem;
+  }
+  
+  .logo-container h2 {
+    font-size: var( --font-size-large-mobile);
+  }
+}
+@media (max-width: 320px) and (max-height: 568px) {
+  .sidebar-item {
+    margin: 2rem 1.5rem;
+  }
+}
+
+
