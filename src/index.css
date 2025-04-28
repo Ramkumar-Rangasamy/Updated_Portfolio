@@ -56,6 +56,8 @@ html, body {
   min-height: 100vh;
   overflow-x: hidden;
   text-align: left;
+  position: relative; /* ✅ Added to make body a positioned parent */
+  z-index: 0;
 }
 
 /* === Typography === */
@@ -134,7 +136,7 @@ select:focus {
   100% { background-position: 0% 50%; }
 }
 
-/* === Glowing Effect === */
+/* === Glowing Effect Background Layer === */
 body::before {
   content: "";
   position: fixed;
@@ -144,7 +146,7 @@ body::before {
   width: 100%;
   background: var(--radial-glow);
   animation: glowPulse var(--glow-animation-duration) ease-in-out infinite;
-  z-index: -1;
+  z-index: -1; /* ✅ Always behind all content */
   opacity: 0.5;
   pointer-events: none;
 }
@@ -169,4 +171,10 @@ body::before {
     --radial-glow: radial-gradient(circle at center, #1e3a8a 0%, transparent 50%);
     --gradient-bg: linear-gradient(120deg, #1e293b, #0f172a, #1e293b);
   }
+}
+
+/* === Important: Menu, Header, Navbar, Main Content always on top === */
+header, nav, main, .menu, .navbar, .content {
+  position: relative;
+  z-index: 1;
 }

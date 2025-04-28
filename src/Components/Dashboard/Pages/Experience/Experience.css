@@ -1,0 +1,38 @@
+.experience-section {
+    padding: 2rem;
+}
+
+.ab-exper-count {
+  font-size: 4em;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.ab-content {
+  font-size: 22px;
+  line-height: 32px;
+  font-weight: 600;
+  color: var(--text-dark);
+  text-transform: capitalize;
+}
+
+.span-of-month{
+    font-size: 18px;
+}
+.experience-card {
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+  
+  /* Hover effect for light background */
+  .experience-card.bg-light:hover {
+    background-color: #f1f1f1;
+    transform: translateY(-5px) scale(1.02);
+  }
+  
+  /* Hover effect for dark background */
+  .experience-card.bg-dark:hover {
+    background-color: #111;
+    transform: translateY(-5px) scale(1.02);
+  }
+  

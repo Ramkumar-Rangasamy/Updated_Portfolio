@@ -5,6 +5,7 @@ import Header from "./Header/Header";
 import Home from "./Pages/Home/Home";
 import About from "./Pages/About/About";
 import Features from "./Pages/Features/Features";
+import Experience from "./Pages/Experience/Experience";
 // Import other sections...
 
 const Dashboard = () => {
@@ -79,6 +80,8 @@ const Dashboard = () => {
           <section id="home"><Home /></section>
           <section id="about"><About /></section>
           <section id="service"><Features /></section>
+          <section id="experience"><Experience /></section>
+
           {/* Add other sections wrapped in <section id="..."> */}
         </div>
       </div>

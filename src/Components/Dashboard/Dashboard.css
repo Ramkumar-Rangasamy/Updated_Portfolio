@@ -2,7 +2,7 @@
   display: flex;
   min-height: fit-content; 
   overflow: hidden; 
-  transition: all 0.3s ease-in-out;
+  transition: all 0.1s ease-in-out;
   flex-direction: row; 
 }
 
@@ -18,7 +18,7 @@
   z-index: 1001;
   pointer-events: auto;
   opacity: 1;
-  transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.1s ease-in-out;
 }
 
 
@@ -28,7 +28,7 @@
   flex: 1;
   height: 100vh; 
   overflow-y: auto; 
-  transition: margin 0.3s ease-in-out;
+  transition: margin 0.1s ease-in-out;
   padding: 0;
   box-sizing: border-box;
   background-color: transparent; 

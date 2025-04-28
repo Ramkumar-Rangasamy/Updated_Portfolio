@@ -1,52 +1,49 @@
 :root {
-  --primary-color: #4E6BFF;
+  --primary-color: #4e6bff;
   --secondary-color: #dbe2ec;
-  --accent-color: #CBE4F5;
+  --accent-color: #cbe4f5;
   --highlight: #f5a623;
-  --text-dark: #183B56;
+  --text-dark: #183b56;
 }
 
 .about-section {
-    background-image: url("../../../../Assets/About_bg_1.png");
-    background-repeat: no-repeat;
-    background-size: auto;
-    background-position: top right, 100%  420px;
-    padding:  2rem;
-  }
-  
-.profile-about-img{
-    width: 450px;
-    height:auto;
-    object-fit: cover;
-    background-color: var(--secondary-color);
-    padding: 10px;
-    border: 1.5px solid var(--primary-color);
-    border-radius:5px 50px 5px 50px;
+  background-image: url("../../../../Assets/About_bg_1.png");
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: top right, 100% 420px;
+  padding: 2rem;
 }
 
-.about-section h2{
+.profile-about-img {
+  width: 450px;
+  height: auto;
+  object-fit: cover;
+  background-color: var(--secondary-color);
+  padding: 10px;
+  border: 1.5px solid var(--primary-color);
+  border-radius: 5px 50px 5px 50px;
+}
+
+.about-section h2 {
   font-weight: 800;
   font-size: clamp(1.3rem, 5vw, 32px);
   color: var(--text-dark);
 }
-.about-section p{
+.about-section p {
   font-weight: 400;
   font-size: 16px;
 }
 
-
-
-
 /* Responsive Styles */
 @media (max-width: 998px) {
   .about-section {
-    padding:1rem 0.5rem;
+    padding: 1rem 0.5rem;
     margin-bottom: 5rem;
   }
-  .abouts-buttons span{
+  .abouts-buttons span {
     position: relative;
     z-index: 1;
     font-size: 14px;
     font-weight: 500;
   }
-}  
+}

@@ -3,20 +3,24 @@ import "./About.css";
 import aboutprofile from "../../../../Assets/aboutprofile.jpg";
 import { CgArrowRight } from "react-icons/cg";
 
-// Helper function to calculate years and months of experience
+// Accurate experience calculation
 const calculateExperience = (startDate) => {
   const start = new Date(startDate);
   const now = new Date();
-  const diffInTime = now - start; // Difference in milliseconds
-  const diffInMonths = Math.floor(diffInTime / (1000 * 60 * 60 * 24 * 30)); // Convert milliseconds to months
-  const years = Math.floor(diffInMonths / 12); // Convert months to years
-  const months = diffInMonths % 12; // Get remaining months
+
+  let years = now.getFullYear() - start.getFullYear();
+  let months = now.getMonth() - start.getMonth();
+
+  if (months < 0) {
+    years--;
+    months += 12;
+  }
 
   return { years, months };
 };
 
- // 👉 handle scroll to section
- const handleNavClick = (id) => {
+// 👉 Handle smooth scroll to section
+const handleNavClick = (id) => {
   const element = document.getElementById(id);
   if (element) {
     element.scrollIntoView({ behavior: 'smooth' });
@@ -61,7 +65,7 @@ const About = () => {
               web technologies.
             </p>
             <p>
-              With {years} years and {months} months of hands-on experience, I
+              With {years} Year{years !== 1 ? "s" : ""} and {months} Month{months !== 1 ? "s" : ""} of hands-on experience, I
               specialize in creating seamless digital experiences that blend
               functionality with intuitive design. I develop scalable frontend
               solutions, collaborating with teams to deliver high-quality
@@ -81,7 +85,7 @@ const About = () => {
               <div className="btn-bar">
                 <button
                   onClick={() => handleNavClick("about")}
-                  className="px-btn theme  abouts-buttons"
+                  className="px-btn theme abouts-buttons"
                 >
                   <span>Download CV</span>
                   <CgArrowRight className="arrow" size="1.5rem" />
@@ -91,7 +95,7 @@ const About = () => {
               <div className="btn-bar">
                 <button
                   onClick={() => handleNavClick("Portfolio")}
-                  className="px-btn theme  abouts-buttons"
+                  className="px-btn theme abouts-buttons"
                 >
                   <span>Contact Us</span>
                 </button>
