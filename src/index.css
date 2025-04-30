@@ -2,14 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
 
 :root {
-  /* Colors */
-  --color-text: #183B56;
-  --color-background: #ffffff;
-  --color-primary: #007bff;
-  --color-heading: #333;
-  --color-border: #ccc;
-
-  /* Gradient */
+  /* Gradient Colors Only */
   --gradient-bg: linear-gradient(120deg, #e4ecfc, #ffffff, #d8e4fcd9);
   --radial-glow: radial-gradient(circle at center, #dbeafe 0%, transparent 50%);
 
@@ -49,21 +42,21 @@ html, body {
   font-size: var(--font-size-base);
   font-weight: var(--font-weight-base);
   line-height: var(--line-height-base);
-  color: var(--color-text);
+  color: #183B56; /* You may replace this with another gradient color if needed */
   background: var(--gradient-bg);
   background-size: 200% 200%;
   animation: gradientMove var(--bg-animation-duration) ease infinite;
   min-height: 100vh;
   overflow-x: hidden;
   text-align: left;
-  position: relative; /* ✅ Added to make body a positioned parent */
+  position: relative;
   z-index: 0;
 }
 
 /* === Typography === */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-family);
-  color: var(--color-heading);
+  color: #183B56;
   line-height: 1.2;
 }
 
@@ -73,7 +66,7 @@ p {
 
 /* === Links === */
 a {
-  color: inherit;
+  color: #183B56;
   text-decoration: none;
   transition: color var(--transition-medium);
 }
@@ -93,12 +86,18 @@ img {
 /* === Buttons === */
 button {
   border: none;
-  background: none;
+  background-color: #dbeafe;
   cursor: pointer;
   font-family: inherit;
   font-size: inherit;
-  color: inherit;
-  transition: all var(--transition-medium);
+  color: #183B56;
+  padding: 8px 16px;
+  border-radius: var(--border-radius);
+  transition: background-color var(--transition-medium);
+}
+
+button:hover {
+  background-color: #e4ecfc;
 }
 
 /* === Focus Styles === */
@@ -107,7 +106,7 @@ a:focus,
 input:focus,
 textarea:focus,
 select:focus {
-  outline: 2px solid var(--color-primary);
+  outline: 2px solid #dbeafe;
   outline-offset: 2px;
 }
 
@@ -117,16 +116,18 @@ textarea,
 select {
   font-family: inherit;
   font-size: inherit;
-  border: 1px solid var(--color-border);
+  border: 1px solid #dbeafe;
   padding: var(--padding-input);
   border-radius: var(--border-radius);
   transition: border var(--transition-medium);
+  background-color: #ffffff;
+  color: #183B56;
 }
 
 input:focus,
 textarea:focus,
 select:focus {
-  border-color: var(--color-primary);
+  border-color: #e4ecfc;
 }
 
 /* === Gradient Background Animation === */
@@ -146,7 +147,7 @@ body::before {
   width: 100%;
   background: var(--radial-glow);
   animation: glowPulse var(--glow-animation-duration) ease-in-out infinite;
-  z-index: -1; /* ✅ Always behind all content */
+  z-index: -1;
   opacity: 0.5;
   pointer-events: none;
 }
@@ -159,18 +160,6 @@ body::before {
 /* === Accessibility Improvement === */
 :focus:not(:focus-visible) {
   outline: none;
-}
-
-/* === Dark Theme Support (Optional) === */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-text: #b0c4de;
-    --color-background: #121212;
-    --color-heading: #f5f5f5;
-    --color-border: #444;
-    --radial-glow: radial-gradient(circle at center, #1e3a8a 0%, transparent 50%);
-    --gradient-bg: linear-gradient(120deg, #1e293b, #0f172a, #1e293b);
-  }
 }
 
 /* === Important: Menu, Header, Navbar, Main Content always on top === */
