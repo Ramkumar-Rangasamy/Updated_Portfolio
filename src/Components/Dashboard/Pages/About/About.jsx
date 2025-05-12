@@ -36,7 +36,7 @@ const About = () => {
   return (
     <section id="about" className="about-section">
       <div className="container-lg">
-        <div className="title-container col-lg-6 mb-3">
+        <div className="title-container mb-3">
           <h2>About Me</h2>
           <p>
             Let me introduce myself – a passionate developer dedicated to

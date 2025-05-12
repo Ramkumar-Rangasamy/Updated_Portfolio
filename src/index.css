@@ -86,7 +86,7 @@ img {
 /* === Buttons === */
 button {
   border: none;
-  background-color: #dbeafe;
+  background-color:none;
   cursor: pointer;
   font-family: inherit;
   font-size: inherit;
@@ -96,9 +96,6 @@ button {
   transition: background-color var(--transition-medium);
 }
 
-button:hover {
-  background-color: #e4ecfc;
-}
 
 /* === Focus Styles === */
 button:focus,

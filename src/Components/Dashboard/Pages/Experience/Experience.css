@@ -1,38 +1,86 @@
-.experience-section {
-    padding: 2rem;
+:root {
+  --highlight-exp: #007bff;
+  --text-dark: #222;
 }
 
+/* Section Wrapper */
+.experience-section {
+  padding: 2rem;
+}
+
+/* Left Side Image */
+.exp-date-image {
+  width: 180px;
+}
+
+/* Experience Count */
 .ab-exper-count {
-  font-size: 4em;
+  font-size: clamp(2.5rem, 5vw, 4em);
   font-weight: 600;
   color: var(--text-dark);
+  margin-top: 1rem;
 }
 
+/* Description Text */
 .ab-content {
-  font-size: 22px;
+  font-size: 18px;
   line-height: 32px;
   font-weight: 600;
   color: var(--text-dark);
   text-transform: capitalize;
 }
 
-.span-of-month{
-    font-size: 18px;
+/* Arrow Icon Color */
+.color-style {
+  color: var(--highlight-exp);
+  margin-right: 15px;
 }
+
+/* Title under each point */
+.exp-company-title {
+  margin-bottom: 5px;
+  padding: 0;
+  font-weight: 600;
+}
+
+/* Icon Sizing and Alignment */
+.exp-icon {
+  font-size: 1.5rem; /* Default icon size */
+  vertical-align: middle;
+}
+
+/* Hover Effects for Cards */
 .experience-card {
-    transition: all 0.3s ease;
-    cursor: pointer;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.experience-card.bg-light:hover {
+  background-color: #f1f1f1;
+  transform: translateY(-5px) scale(1.02);
+}
+
+.experience-card.bg-dark:hover {
+  background-color: #111;
+  transform: translateY(-5px) scale(1.02);
+}
+
+/* Responsive Styles */
+@media (max-width: 998px) {
+  .experience-section {
+    padding: 1rem;
   }
-  
-  /* Hover effect for light background */
-  .experience-card.bg-light:hover {
-    background-color: #f1f1f1;
-    transform: translateY(-5px) scale(1.02);
+
+  .ab-exper-count {
+    font-size: 2.5rem;
   }
-  
-  /* Hover effect for dark background */
-  .experience-card.bg-dark:hover {
-    background-color: #111;
-    transform: translateY(-5px) scale(1.02);
+
+  .ab-content {
+    font-size: 16px;
+    line-height: 28px;
   }
-  
+
+  .exp-date-image {
+    width: 140px;
+  }
+}

@@ -8,7 +8,7 @@ const Features = () => {
   return (
     <section className="features-section" id="service">
       <div className="container-lg">
-        <div className="title-container col-lg-6 mb-4">
+        <div className="title-container mb-3">
           <h2> What I Do</h2>
           <p> I create dynamic web apps with a focus on user-friendly design, scalable backends, and full MERN stack solutions.</p>
         </div>

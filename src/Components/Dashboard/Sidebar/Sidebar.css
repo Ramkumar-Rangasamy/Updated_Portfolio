@@ -2,9 +2,10 @@
 :root {
   --sidebar-width: 280px;
   --sidebar-mobile-repsonsives-width: 260px;
-  --sidebar-bg: #F7FAFF;
-  --text-color: #183B56;
-  --highlight-color: #4E6BFF;
+  --sidebar-bg: #2A58AD;
+  --text-color: #98B3F2;
+  --text-logo-color:#050a0e;
+  --highlight-color: #edf3f8;
   --font-size-large: 20px;
   --font-size-small: 16px;
   --font-size-large-mobile: 16px;
@@ -50,34 +51,20 @@
   justify-content: center;
   gap:20px;
   padding: 13px 0;
-  border-radius: 8px;
+  border-radius:3px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.082);
   transform: translateY(-5px);
-  transition: all 0.3s ease;
-  background: linear-gradient(120deg, #EDF3FF, #dfe8f5, #FFFFFF);
-  background-size: 300% 300%;
-  animation: gradientMove 5s ease infinite; 
+  background:#1C4C9E;
 }
 
-@keyframes gradientMove {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
 .r-icons-style{
-  color: var(--text-color);
+  color: var(--text-logo-color);
   font-size:var( --react-icon-size);
 }
 
 .logo-container h2 {
   font-size: var(--font-size-large);
-  color: var(--text-color); 
+  color: var(--text-logo-color); 
   font-weight: 600; 
   margin-bottom: 0;
   letter-spacing: 1px; 
