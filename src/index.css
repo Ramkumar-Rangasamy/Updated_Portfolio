@@ -1,72 +1,91 @@
 /* Import Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
 
-:root {
-  /* Gradient Colors Only */
-  --gradient-bg: linear-gradient(120deg, #e4ecfc, #ffffff, #d8e4fcd9);
-  --radial-glow: radial-gradient(circle at center, #dbeafe 0%, transparent 50%);
+/* then rest of your styles */
 
-  /* Typography */
+:root {
+  --smoke-color1: #e6f5f7; /* light cyan/blue */
+  --smoke-color2: #fefefe; /* light pink */
+
+  --primary-color: #4E6BFF;
+  --secondary-color: #dbe2ec;
+  --accent-color: #CBE4F5;
+  --highlight: #f5a623;
+  --text-dark: #183B56;
+
+  --font-xl: 4rem;
+  --font-lg: 2.8rem;
+  --font-md: 1.8rem;
+  --font-sm: 1.5rem;
+
   --font-family: 'Nunito', sans-serif;
   --font-size-base: 15px;
   --font-weight-base: 500;
   --line-height-base: 1.6;
-
-  /* Spacing & Borders */
-  --border-radius: 4px;
-  --padding-input: 8px;
-
-  /* Animation */
   --transition-fast: 0.2s ease-in-out;
-  --transition-medium: 0.3s ease;
-  --bg-animation-duration: 8s;
-  --glow-animation-duration: 6s;
+  --smoke-animation-duration: 12s;
 }
 
-/* === Global Reset & Base Styles === */
-*,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  transition: all var(--transition-fast);
-  outline: none !important;
-}
-
-html, body {
-  scroll-behavior: smooth;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* Base body styling */
+body {
   font-family: var(--font-family);
   font-size: var(--font-size-base);
   font-weight: var(--font-weight-base);
   line-height: var(--line-height-base);
-  color: #183B56; /* You may replace this with another gradient color if needed */
-  background: var(--gradient-bg);
+  color: #183B56;
+  background: radial-gradient(circle at 20% 30%, var(--smoke-color1), transparent 40%),
+              radial-gradient(circle at 80% 70%, var(--smoke-color2), transparent 40%);
   background-size: 200% 200%;
-  animation: gradientMove var(--bg-animation-duration) ease infinite;
+  animation: smokeMove var(--smoke-animation-duration) ease-in-out infinite;
   min-height: 100vh;
-  overflow-x: hidden;
+  overflow: hidden;
   text-align: left;
   position: relative;
   z-index: 0;
+
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+ 
+}
+
+/* Animated Keyframes for Smoke Effect */
+@keyframes smokeMove {
+  0% {
+    background-position: 20% 30%, 80% 70%;
+  }
+  50% {
+    background-position: 25% 40%, 75% 60%;
+  }
+  100% {
+    background-position: 20% 30%, 80% 70%;
+  }
+}
+
+
+
+/* Optional: blur-like overlay using ::before */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: inherit;
+  filter: blur(60px);
+  z-index: -1;
+  opacity: 0.6;
+  pointer-events: none;
 }
 
 /* === Typography === */
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6, p{
   font-family: var(--font-family);
-  color: #183B56;
-  line-height: 1.2;
-}
-
-p {
-  margin-bottom: 1em;
 }
 
 /* === Links === */
 a {
-  color: #183B56;
   text-decoration: none;
   transition: color var(--transition-medium);
 }
@@ -83,84 +102,3 @@ img {
   display: block;
 }
 
-/* === Buttons === */
-button {
-  border: none;
-  background-color:none;
-  cursor: pointer;
-  font-family: inherit;
-  font-size: inherit;
-  color: #183B56;
-  padding: 8px 16px;
-  border-radius: var(--border-radius);
-  transition: background-color var(--transition-medium);
-}
-
-
-/* === Focus Styles === */
-button:focus,
-a:focus,
-input:focus,
-textarea:focus,
-select:focus {
-  outline: 2px solid #dbeafe;
-  outline-offset: 2px;
-}
-
-/* === Form Elements === */
-input,
-textarea,
-select {
-  font-family: inherit;
-  font-size: inherit;
-  border: 1px solid #dbeafe;
-  padding: var(--padding-input);
-  border-radius: var(--border-radius);
-  transition: border var(--transition-medium);
-  background-color: #ffffff;
-  color: #183B56;
-}
-
-input:focus,
-textarea:focus,
-select:focus {
-  border-color: #e4ecfc;
-}
-
-/* === Gradient Background Animation === */
-@keyframes gradientMove {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-/* === Glowing Effect Background Layer === */
-body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background: var(--radial-glow);
-  animation: glowPulse var(--glow-animation-duration) ease-in-out infinite;
-  z-index: -1;
-  opacity: 0.5;
-  pointer-events: none;
-}
-
-@keyframes glowPulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.05); }
-}
-
-/* === Accessibility Improvement === */
-:focus:not(:focus-visible) {
-  outline: none;
-}
-
-/* === Important: Menu, Header, Navbar, Main Content always on top === */
-header, nav, main, .menu, .navbar, .content {
-  position: relative;
-  z-index: 1;
-}

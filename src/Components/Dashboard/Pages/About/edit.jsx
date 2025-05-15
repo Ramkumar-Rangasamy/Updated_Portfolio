@@ -22,7 +22,7 @@ const About = () => {
 
   return (
     <section id="about" className="about-section">
-      <div className="container-lg">
+      <div className="container-lg about-padding">
         <div className="row align-items-center g-5">
           <div className="col-lg-5 order-1 order-lg-1">
             <div className="d-flex flex-column align-items-center justify-content-center h-100">

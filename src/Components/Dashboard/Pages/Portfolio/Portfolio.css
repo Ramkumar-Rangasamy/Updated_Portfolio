@@ -1,0 +1,177 @@
+/* Container area */
+.portfolio-area {
+  padding: 60px 15px;
+}
+
+.section-title {
+  font-size: 32px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.portfolio-description {
+  font-size: 16px;
+  color: #444;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 40px;
+  line-height: 1.6;
+}
+
+/* Grid item */
+.portfolio-grid-item {
+  overflow: hidden;
+  margin-top: 30px;
+  position: relative;
+  
+}
+
+/* Image wrapper */
+.portfolio-item {
+  position: relative;
+  display: block;
+  overflow: hidden;
+    border: 1px solid #333;
+}
+
+/* Image style */
+.portfolio-grid-item img,
+.portfolio-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Overlay container */
+.portfolio-img-overlay {
+  position: absolute;
+  z-index: 2;
+  top: 5px;
+  left: 5px;
+  right: 5px;
+  bottom: 5px;
+
+  background-color: rgba(0, 0, 0, 0.8);
+  opacity: 0;
+  transform: scale(1.1);
+  transition: all 0.5s ease;
+}
+
+/* Hover to show overlay */
+.portfolio-item:hover .portfolio-img-overlay {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Overlay content */
+.portfolio-content {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  transform: translateY(-50%);
+  z-index: 3;
+  overflow: hidden;
+  transition: 0.5s;
+  will-change: transform;
+}
+
+/* Title and subtitle animations */
+.portfolio-content h4 {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 10px;
+  opacity: 0;
+  transform: translateY(-15px);
+  transition: all 0.6s ease;
+}
+
+.portfolio-content h6 {
+  color: #ff6908;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.9px;
+  opacity: 0;
+  transform: translateY(15px);
+  transition: all 0.6s ease;
+  cursor: pointer;
+}
+
+/* On hover, show content */
+.portfolio-item:hover .portfolio-content h4,
+.portfolio-item:hover .portfolio-content h6 {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Link styles */
+a {
+  color: #ff6908;
+  text-decoration: none !important;
+  transition: all 0.5s ease-in-out;
+}
+
+/* Modal overlay */
+.popup-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+/* Modal content */
+.popup-content {
+  position: relative;
+  background: #fff;
+  padding: 20px;
+  max-width: 800px;
+  width: 90%;
+  border-radius: 10px;
+  text-align: center;
+  animation: zoomIn 0.3s ease-in-out;
+}
+
+.popup-content img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 15px;
+  border-radius: 8px;
+}
+
+.popup-content h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 30px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #333;
+}
+
+/* Zoom in animation */
+@keyframes zoomIn {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+

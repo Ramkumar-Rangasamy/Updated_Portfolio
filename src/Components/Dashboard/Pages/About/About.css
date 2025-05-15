@@ -2,8 +2,6 @@
   --primary-color: #4e6bff;
   --secondary-color: #dbe2ec;
   --accent-color: #cbe4f5;
-  --highlight: #f5a623;
-  --text-dark: #183b56;
 }
 
 .about-section {
@@ -13,26 +11,136 @@
   background-position: top right, 100% 420px;
   padding: 2rem;
 }
-
 .profile-about-img {
   width: 450px;
-  height: auto;
+  height: 600px;
   object-fit: cover;
   background-color: var(--secondary-color);
   padding: 10px;
   border: 1.5px solid var(--primary-color);
-  border-radius: 5px 50px 5px 50px;
+  border-radius: 50px 5px 50px 50px;
+  box-shadow: 0 0 30px rgba(31, 45, 61, 0.125);
+  image-rendering: auto; /* default, best for photos */
+  -webkit-transform: translateZ(0); /* triggers GPU acceleration */
+  backface-visibility: hidden; /* avoid blur artifacts */
 }
 
-.about-section h2 {
+
+.right-size-about h2 {
   font-weight: 800;
-  font-size: clamp(1.3rem, 5vw, 32px);
+  font-size: clamp(1.3rem, 5vw, 42px);
   color: var(--text-dark);
 }
-.about-section p {
+
+.right-size-about p {
   font-weight: 400;
   font-size: 16px;
 }
+
+.info-card {
+  background: #ffffff;
+  box-shadow: 0 0 10px rgba(64, 18, 128, 0.096);
+  border-radius: 4px;
+  padding: 15px 20px;
+}
+
+.info-card .one-two-icons {
+  color: var(--highlight);
+  font-size: var(--font-sm);
+}
+
+.info-card h3 {
+  font-size: var(--font-sm);
+  color: var(--text-dark);
+  font-weight: 600;
+}
+
+.stats {
+  box-shadow: 0 0 10px rgba(64, 18, 128, 0.096);
+  background: #ffffff3b;
+  border-radius: 5px;
+  padding: 25px;
+  margin-top: 80px;
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-number {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-weight: bold;
+  font-size: 60px;
+  background: linear-gradient(120deg, #183b56, #8253b5);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-size: 60px;
+}
+
+.stat-label {
+  color: #183b56;
+  font-size: 25px;
+  text-transform: capitalize;
+}
+.btn-glass {
+  display: inline-block;
+  position: relative;
+  width: 160px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 15px;
+  font-weight: 600;
+  text-align: center;
+  color: #fff;
+  border: none;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  text-decoration: none; /* important for <a> */
+}
+
+.download-btn {
+  background: #183b56;
+  color: #fff;
+}
+
+.contact-btn {
+  background: rgba(255, 255, 255, 0.15);
+  color: #183b56;
+  border: 1px solid rgba(24, 59, 86, 0.3);
+}
+
+.btn-glass::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 150%;
+  height: 100%;
+  background: linear-gradient(120deg, rgba(255,255,255,0.3), rgba(255,255,255,0));
+  transform: skewX(-20deg);
+  transition: 0.6s;
+  pointer-events: none;
+}
+
+.btn-glass:hover::before {
+  left: 100%;
+}
+
+.btn-glass:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 6px 24px rgba(24, 59, 86, 0.25);
+}
+
+.btn-glass:active {
+  transform: scale(0.96);
+}
+
 
 /* Responsive Styles */
 @media (max-width: 998px) {
@@ -40,10 +148,15 @@
     padding: 1rem 0.5rem;
     margin-bottom: 5rem;
   }
-  .abouts-buttons span {
-    position: relative;
-    z-index: 1;
-    font-size: 14px;
-    font-weight: 500;
+    .profile-about-img {
+    width: 100%;
+    height: auto;
+    border-radius: 30px 5px 30px 30px;
+  }
+  .stat-number {
+    font-size: 30px;
+  }
+  .stat-label {
+    font-size: 16px;
   }
 }
