@@ -30,7 +30,7 @@ const Sidebar = React.memo(({ isOpen, toggleSidebar, activeSection, onNavigate }
     <aside className={`sidebar ${isOpen ? "open" : ""}`}>
       {/* Logo / Header */}
       <div className="sidebar-header">
-        <IoClose className="close-icon"size={25} onClick={toggleSidebar} />
+        <IoClose className="sidebar-close-icon"size={25} onClick={toggleSidebar} />
       </div>
 
       <div className="logo-container mt-4">

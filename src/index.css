@@ -1,93 +1,101 @@
 /* Import Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
 
-/* then rest of your styles */
-
 :root {
-  --smoke-color1: #e6f5f7; /* light cyan/blue */
-  --smoke-color2: #fefefe; /* light pink */
+  /* Gradient Background */
+  --gradient-bg: linear-gradient(120deg, #d7f6fa, #fef7f7);
 
+  /* Colors */
+  --color-text: #183B56;
+  --background-bg:#0f1a2b;
+  --normal-text: #ffffff;
+  --highlight: #f5a623;
   --primary-color: #4E6BFF;
+  --color-heading: #333;
+  --color-border: #ccc;
   --secondary-color: #dbe2ec;
   --accent-color: #CBE4F5;
-  --highlight: #f5a623;
-  --text-dark: #183B56;
+  
+ /* Font Size */
+  --font-xl: 3.5rem;   /* e.g., h1 */
+  --font-lg: 3rem;   /* e.g., h2 */
+  --font-md: 1.8rem;   /* e.g., h3, h4 */
+  --font-sm: 1.6rem; /* e.g., h5, h6 */
+  --font-p: 1rem;   /* paragraph */
 
-  --font-xl: 4rem;
-  --font-lg: 2.8rem;
-  --font-md: 1.8rem;
-  --font-sm: 1.5rem;
-
+  /* Typography */
   --font-family: 'Nunito', sans-serif;
   --font-size-base: 15px;
-  --font-weight-base: 500;
-  --line-height-base: 1.6;
-  --transition-fast: 0.2s ease-in-out;
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-regularplus: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 800;
+  --line-height-base: 1.30;
+
+
+  /* Spacing & Borders */
+  --border-radius: 5px;
+  --border-radius-circular: 50%;
+  --padding-input: 8px;
+
+  /* Animation */
   --smoke-animation-duration: 12s;
+  --transition-fast: 0.2s ease-in-out;
+  --transition-medium: 0.3s ease;
+  --bg-animation-duration: 8s;
+  
 }
 
-/* Base body styling */
-body {
-  font-family: var(--font-family);
-  font-size: var(--font-size-base);
-  font-weight: var(--font-weight-base);
-  line-height: var(--line-height-base);
-  color: #183B56;
-  background: radial-gradient(circle at 20% 30%, var(--smoke-color1), transparent 40%),
-              radial-gradient(circle at 80% 70%, var(--smoke-color2), transparent 40%);
-  background-size: 200% 200%;
-  animation: smokeMove var(--smoke-animation-duration) ease-in-out infinite;
-  min-height: 100vh;
-  overflow: hidden;
-  text-align: left;
-  position: relative;
-  z-index: 0;
+/* === Global Reset & Base Styles === */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: all var(--transition-fast);
+  outline: none !important;
+}
 
+html, body {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
- 
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-base);
+  color: var(--color-text);
+  background: var(--gradient-bg);
+  background-size: 200% 200%;
+  animation: gradientMove var(--bg-animation-duration) ease infinite;
+  min-height: 100vh;
+  overflow-x: hidden;
+  text-align: left;
 }
 
-/* Animated Keyframes for Smoke Effect */
-@keyframes smokeMove {
-  0% {
-    background-position: 20% 30%, 80% 70%;
-  }
-  50% {
-    background-position: 25% 40%, 75% 60%;
-  }
-  100% {
-    background-position: 20% 30%, 80% 70%;
-  }
-}
-
-
-
-/* Optional: blur-like overlay using ::before */
-body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background: inherit;
-  filter: blur(60px);
-  z-index: -1;
-  opacity: 0.6;
-  pointer-events: none;
+/* === Gradient Background Animation === */
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 /* === Typography === */
-h1, h2, h3, h4, h5, h6, p{
-  font-family: var(--font-family);
+h1 { font-size: var(--font-xl); }
+h2 { font-size: var(--font-lg); }
+h3, h4 { font-size: var(--font-md); }
+h5, h6 { font-size: var(--font-sm); }
+p { 
+  font-size: var(--font-p);
+  margin-bottom: 0rem !important;
 }
 
-/* === Links === */
-a {
-  text-decoration: none;
-  transition: color var(--transition-medium);
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-family);
+  color: var(--color-text);
+  line-height: 1.2;
 }
 
 /* === Lists === */
@@ -102,3 +110,57 @@ img {
   display: block;
 }
 
+/* === Buttons === */
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  transition: all var(--transition-medium);
+}
+
+/* === Focus Styles === */
+button:focus,
+a:focus,
+input:focus,
+textarea:focus,
+select:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+/* === Form Elements === */
+input,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+  border: 1px solid var(--color-border);
+  padding: var(--padding-input);
+  border-radius: var(--border-radius);
+  transition: border var(--transition-medium);
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--primary-color);
+}
+
+
+/* === Accessibility Improvement === */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+@media (max-width: 1200px) {
+  :root {
+    --font-xl: 2.8rem;
+    --font-lg: 2.5rem;
+    --font-md: 1.1rem;
+    --font-sm: 1.2rem;
+    --font-p: 0.9rem;
+  }
+}

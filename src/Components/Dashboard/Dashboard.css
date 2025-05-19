@@ -34,5 +34,28 @@
   background-color: transparent; 
 }
 
+@media (max-width: 998px) {
+  .dashboard-container {
+    flex-direction: column; /* Stack items vertically */
+  }
+
+  .main-content {
+    width: 100%;
+    margin-left: 0 !important;
+    box-sizing: border-box;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+  }
+
+  .sidebar {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  body, html {
+    overflow-x: hidden; /* Ensure no horizontal scroll globally */
+  }
+}
+
+
 
 

@@ -4,6 +4,9 @@ import download from '../../Assets/Ramkumar.pdf';
 
 
 //react-icons 
+//Home page icon
+import { CgArrowRight } from "react-icons/cg";
+
 import { BiSolidDashboard, BiSolidUserPin, BiSolidSpreadsheet } from "react-icons/bi";
 import { FaAward, FaLightbulb, FaLaptopCode } from "react-icons/fa";
 import { TbRosetteDiscountCheckFilled } from "react-icons/tb";
@@ -43,11 +46,12 @@ const setData = {
       "Web Designer",
       "Frontend Developer",
     ],
+    homerightarrow:<CgArrowRight size="1.5rem" className="arrow"/>,
   },
 
   FeaturesDatas: [
     {
-      icon: <FiMenu />,
+      icon:<MdDevices />,
       title: "User Interface Development",
       description:
         "I engineer responsive, interactive UIs with React, HTML & CSS. Designed to captivate users and elevate experiences.",
@@ -77,10 +81,10 @@ const setData = {
         "I create modern, eye-catching websites tailored to your brand. Design meets function for a standout digital presence.",
     },
     {
-      icon: <MdDevices />,
-      title: "Responsiveness",
+      icon:<FiMenu />,
+      title: "Performance Optimization",
       description:
-        "I ensure your site works flawlessly on all devices and screens. From desktop to mobile, the experience stays consistent.",
+        "Improve loading speeds and user experience through efficient coding practices, lazy loading, and code splitting.",
     },
   ],
 

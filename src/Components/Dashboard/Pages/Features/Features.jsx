@@ -8,9 +8,12 @@ const Features = () => {
   return (
     <section className="features-section" id="service">
       <div className="container-lg">
-        <div className="title-container mb-3">
-          <h2> What I Do</h2>
-          <p> I create dynamic web apps with a focus on user-friendly design, scalable backends, and full MERN stack solutions.</p>
+        <div className="title-container  mb-4">
+          <h2>What I Provide To My Client</h2>
+          <p className="col-12 col-md-6">
+            MERN Stack Web Developer focused on building scalable, high-performance web applications with seamless user experiences.
+          </p>
+
         </div>
 
         <div className="row g-4 justify-content-center">
@@ -22,8 +25,11 @@ const Features = () => {
               data-aos-delay={index * 100}
             >
               <div className="feature-card card h-100 border-0 p-3 p-sm-3 p-md-4 shadow-sm">
-                <div className="icon-image fs-2 mb-3">
-                  {feature.icon}
+                <div className="icon-wrapper">
+                  <div className="icon-shadow"></div>
+                  <div className="icon-image">
+                    {feature.icon}
+                  </div>
                 </div>
                 <h5>{feature.title}</h5>
                 <p>{feature.description}</p>
@@ -31,6 +37,8 @@ const Features = () => {
             </div>
           ))}
         </div>
+
+
       </div>
     </section>
   );

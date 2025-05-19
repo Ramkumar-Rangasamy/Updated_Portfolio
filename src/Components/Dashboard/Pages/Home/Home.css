@@ -1,17 +1,23 @@
+.home-banner-01 {
+  background-image: url("../../../../Assets/homebackground.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding:2rem;
+  min-height: 100vh;
+}
 
-.availability-container {
+.home-availability-container {
   display: flex;
   align-items: center;
   gap: 10px;
   flex-wrap: wrap;
-  margin:0px 5px 0 5px ;
 }
 
-.status-dot {
+.home-status-dot {
   width: 12px;
   height: 12px;
   background-color: var(--highlight);
-  border-radius: 50%;
+  border-radius: var(--border-radius-circular);
   animation: pulse 1s ease-in-out infinite;
   will-change: transform, opacity;
 }
@@ -27,16 +33,14 @@
   }
 }
 
-.status-text {
-  font-weight: 600;
-  font-size: 14px;
-  color: var( --text-dark);
+.home-status-text {
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text);
 }
 
-.role-text {
-  font-weight: 500;
+.home-role-text {
+  font-weight: var(--font-weight-semibold);
   color: var(--primary-color);
-  font-size: 14px;
   animation: fadeSlide 2.4s ease-in-out infinite;
   will-change: transform, opacity;
 }
@@ -56,31 +60,23 @@
   }
 }
 
-.home-banner-01 {
-  background-image: url("../../../../Assets/homebackground.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  padding:2rem;
-  min-height: 100vh;
-}
-
 .hs-hello {
-  font-weight: 800;
-  font-size: clamp(2rem, 5vw, 40px);
-  color: var(--text-dark);
+  font-weight: var( --font-weight-semibold);
+  font-size: clamp(2rem, 5vw, var(--font-lg));
+  color: var(--color-text);
 }
 
 .hs-name {
-  font-weight: 800;
+  font-weight: var( --font-weight-bold);
   font-size: clamp(2rem, 7vw, var(--font-xl));
-  color: var(--text-dark);
+  color: var(--color-text);
 }
 
 .hs-role {
   font-size: clamp(1.1rem, 4vw, var(--font-md));
-  font-weight: 500;
-  line-height: 1.25;
-  color: var(--text-dark);
+  font-weight: var(--font-weight-regular);
+  line-height:var( --line-height-base);
+  color: var(--color-text);
 }
 
 .hs-role .hs-role-span {
@@ -88,15 +84,16 @@
 }
 
 .px-btn {
-  padding: 0 50px 0 20px;
-  line-height: 60px;
+  padding: 0 50px 0 25px;
+  line-height: 50px;
   position: relative;
   display: inline-block;
-  color: var(--text-dark);
+  color: var(--color-heading);
   background: none;
   border: none;
   transition: color 0.3s ease;
   text-decoration: none;
+  
 }
 
 .px-btn:before {
@@ -107,22 +104,23 @@
   display: block;
   border-radius: 30px;
   background: transparent;
-  border: 1px solid var(--accent-color);
+  border: 1px solid var(--color-text);
   border-right: 1px solid transparent;
   transition: all 0.35s ease;
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   z-index: 0;
+ 
 }
 
 .px-btn:hover:before {
   background: var(--accent-color);
-  width: 83%;
+  width: 85%;
   border-color: var(--accent-color);
 }
 
 .px-btn:hover {
-  color: var(--primary-color);
+  color: var(--color-text);
 }
 
 .px-btn span,
@@ -166,38 +164,51 @@
 /* Responsive Styles */
 @media (max-width: 998px) {
   .home-banner-01 {
-    padding:0;
-    min-height: auto;
+    padding:2.5rem;
+  }
+
+   .hs-hello {
+    font-size: clamp(1.5rem, 5vw, 1rem);
+  }
+
+  .hs-name {
+    font-size: clamp(2rem, 7vw, var(--font-lg));
+  }
+
+  .hs-role {
+    font-size: clamp(1rem, 4vw, var(--font-md));
+  }  
+}
+
+@media (max-width: 768px) {
+  .home-banner-01 {
+    padding:0.5rem;
+   
   }
 
   .mobileview-style {
     text-align: center;
-    margin-bottom: 5rem;
-  }
-  
-  .profile-container{
-    border-radius:50%;
-    margin:1rem 2rem;
-  }
-  
-  .profile-img{
-    border-radius:50%;
+    margin-bottom: 4rem;
   }
 
   .mobile-tyle-btn-btns {
     justify-content: center;
-    gap:20px;
   }
-  
-  .px-btn:hover:before {
-    width: 89%;
-  }
-}
 
-@media (max-width: 768px) {
-  .availability-container{
-    margin:10px 0 20px 6px ;
+  .profile-container{
+    border-radius:50%;
+    margin:2rem 2rem 3rem 2rem;
   }
+
+  .profile-img{
+    border-radius:50%;
+  }
+
+}
+  
+
+@media (max-width: 425px) {
+  
   .hs-hello {
     font-size: clamp(1.5rem, 5vw, 2rem);
   }
@@ -210,14 +221,27 @@
     font-size: clamp(1rem, 4vw, var(--font-md));
   }
 
+  .mobile-tyle-btn-btns {
+    gap:20px;
+  }
+
   .px-btn {
-    padding: 0 25px 0 10px;
-    line-height: 50px;
+    padding: 0  10px 0 10px;
+    line-height: 40px;
+  }
+  .px-btn:hover:before {
+    width: 100%;
   }
 
   .px-btn:before {
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .px-btn span,
+  .px-btn .arrow {
+    font-size:var(--font-size-base);
+    font-weight:var(--font-weight-regularplus);
   }
 }
   
