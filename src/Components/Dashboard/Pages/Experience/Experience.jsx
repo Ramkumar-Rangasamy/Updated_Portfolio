@@ -48,7 +48,7 @@ const Experience = () => {
                   <BiSolidChevronRightCircle className='me-2 color-style exp-icon' />
                   <h5 className="exp-company-title">Creative UI Development</h5>
                 </div>  
-                <p className="p-2 pt-0 pb-0">
+                <p className="p-2 pt-0 pb-0 line-spaceing-experience">
                   Gained real-time project experience in designing responsive UIs, focusing on clean layout and accessibility across all screen sizes.
                 </p>
               </div>
@@ -58,7 +58,7 @@ const Experience = () => {
                   <BiSolidChevronRightCircle className="me-2 color-style exp-icon" />
                   <h5 className="exp-company-title">Dashboard Projects</h5>
                 </div>
-                <p className="p-2 pt-0 pb-0">
+                <p className="p-2 pt-0 pb-0 line-spaceing-experience">
                   Worked on complete dashboard structures — implementing layouts, state management, and connecting UI logic in React efficiently.
                 </p>
               </div>
@@ -68,7 +68,7 @@ const Experience = () => {
                  <BiSolidChevronRightCircle className="me-2 color-style exp-icon" />
                  <h5 className="exp-company-title">Clean Code & Integration</h5>
                 </div>
-                <p className="p-2 pt-0">
+                <p className="p-2 pt-0 line-spaceing-experience">
                   I take pride in translating designs into production-ready React code with proper structure, reusability, and responsive behavior.
                 </p>
               </div>

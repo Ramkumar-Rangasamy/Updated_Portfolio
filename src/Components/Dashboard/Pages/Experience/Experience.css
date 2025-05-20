@@ -5,9 +5,9 @@
 /* Section Wrapper */
 .experience-section {
   background-image: url("../../../../Assets/experience.png");
-      background-repeat: no-repeat;
-    background-size: cover;
-  padding: 2rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 2rem 1rem;
 }
 
 /* Left Side Image */
@@ -44,7 +44,10 @@
   padding: 0;
   font-weight: 600;
 }
-
+.line-spaceing-experience{
+    color: var(--color-text);
+    line-height: 1.6;
+}
 /* Icon Sizing and Alignment */
 .exp-icon {
   font-size: 1.5rem; /* Default icon size */

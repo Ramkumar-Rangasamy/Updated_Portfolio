@@ -15,26 +15,26 @@ const portfolioItems = [
   },
    {
     id: 2,
-    title: 'medxbay',
+    title: 'csuite',
     image: csuite,
   },
    {
     id: 3,
-    title: 'medxbay',
+    title: 'WowHR',
     image: WowHR,
   },
    {
     id: 4,
-    title: 'medxbay',
+    title: 'CheapOair',
     image: CheapOair,
   },
    {
     id: 5,
-    title: 'medxbay',
+    title: 'Architecture',
     image: Architecture,
   }, {
     id: 6,
-    title: 'medxbay',
+    title: 'InventoryManagement',
     image: InventoryManagement,
   },
   // Add more projects if needed
@@ -52,13 +52,15 @@ const Portfolio = () => {
   };
 
   return (
-    <div className="portfolio-area container" id="portfolio">
-      <h2 className="section-title">Portfolio</h2>
-      <p className="portfolio-description">
-        Explore a selection of my latest web development projects.<br />
-        I specialize in crafting clean, responsive, and user-focused websites and applications.<br />
-        With experience serving both local and global clients, I bring ideas to life through code and design.
-      </p>
+    <section className="portfolio-section" id="portfolio">
+      <div className="container-lg">
+        <div className="title-container mb-4">
+          <h2>Portfolio</h2>
+          <p className="col-12 col-md-6">
+            Explore a selection of my latest web development projects.
+            With experience serving both local and global clients, I bring ideas to life through code and design.
+          </p>
+        </div>  
 
       <div className="row">
         {portfolioItems.map((project) => (
@@ -91,7 +93,8 @@ const Portfolio = () => {
           </div>
         </div>
       )}
-    </div>
+      </div>
+    </section>
   );
 };
 

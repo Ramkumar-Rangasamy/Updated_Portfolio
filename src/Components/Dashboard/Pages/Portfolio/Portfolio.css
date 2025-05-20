@@ -1,6 +1,6 @@
 /* Container area */
-.portfolio-area {
-  padding: 60px 15px;
+.portfolio-section{
+   padding: 2rem 1rem;
 }
 
 .section-title {
@@ -32,14 +32,14 @@
   position: relative;
   display: block;
   overflow: hidden;
-    border: 1px solid #333;
 }
 
 /* Image style */
 .portfolio-grid-item img,
 .portfolio-item img {
   width: 100%;
-  height: auto;
+  height:320px;
+  object-fit: cover;
   display: block;
 }
 
@@ -174,4 +174,10 @@ a {
     opacity: 1;
   }
 }
+
+@media (max-width: 998px) {
+  .portfolio-section  {
+    padding: 1rem;
+  }
+} 
 

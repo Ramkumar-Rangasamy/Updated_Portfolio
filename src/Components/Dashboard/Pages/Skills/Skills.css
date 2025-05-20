@@ -1,0 +1,67 @@
+.skills-section {
+  padding: 2rem 1rem;
+}
+
+.feature-gd {
+  position: relative;
+  margin-left: 5%;
+  margin-right: 5%;
+  background-color: var(--normal-text);
+  padding: 30px 40px;
+  border-radius: var(--border-radius, 12px);
+  border: 1px solid var(--border-color-light);
+  transition: 0.4s ease-out;
+
+}
+
+.icon {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top:15px;
+  left: -30px;
+  box-shadow: rgba(0, 0, 0, 0.13) 0px 0px 14px -5px;
+  border-radius:var( --border-radius-circular);
+  background: var( --normal-text);
+  border: 1px solid var(--border-color-light);
+  transition: 0.3s;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.icon-info {
+  padding-left: 10px;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.feature-gd:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+
+@media (max-width: 998px) {
+  .skills-section  {
+    padding: 1rem;
+  }
+
+  .feature-gd {
+    margin-right: 0%;
+  }
+
+  .icon {
+    top: 13px;
+  }
+}
