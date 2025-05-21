@@ -5,7 +5,9 @@ import { FiMapPin } from "react-icons/fi";
 import './Contact.css';
 import setData from '../../../Data/SetData';
 //We using in email import him 
- import emailjs from '@emailjs/browser'
+ import emailjs from '@emailjs/browser';
+ import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const Contact = () => {
     const {email, phone, address } = setData.contact;
     const form = useRef();
@@ -17,14 +19,30 @@ const Contact = () => {
         .then((result) => {
             console.log(result.text);
             e.target.reset();
-            alert("Message Sent! Thank you for contacting us");
+            toast.success("Message Sent! Thank you for contacting us", {
+                position: "top-right",
+                autoClose: 4000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+            });
         }, (error) => {
             console.log(error.text);
-            alert("Something went wrong! Please try again.");
+            toast.error("Something went wrong! Please try again.", {
+                position: "top-right",
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+            });
         });
+
     };
   return (
     <section className="contact-section" id="contact">
+      <ToastContainer/>
     <div className="container-lg">
          <div className="title-container mb-4">
           <h2>Send Us A Message</h2>

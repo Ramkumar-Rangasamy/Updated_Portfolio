@@ -85,28 +85,30 @@ const About = () => {
       </div>
 
       {/* Scroll-triggered count up */}
-      <div className="stats row" ref={ref}>
-        {aboutData.stats?.map((stat, index) => (
-          <div key={index} className="stat-item col-6 col-lg pb-5">
-            <h3 className="stat-number">
-              {inView ? (
-                <>
-                  <CountUp
-                    key={stat.label + "-countup-" + inView} // key to reset animation
-                    start={0}
-                    end={stat.value}
-                    duration={2}
-                    separator=","
-                  />
-                  {stat.suffix}
-                </>
-              ) : (
-                `0 ${stat.suffix}`
-              )}
-            </h3>
-            <p className="stat-label mb-0">{stat.label}</p>
-          </div>
-        ))}
+      <div className="container">
+        <div className="stats row" ref={ref}>
+          {aboutData.stats?.map((stat, index) => (
+            <div key={index} className="stat-item col-6 col-lg pb-5">
+              <h3 className="stat-number">
+                {inView ? (
+                  <>
+                    <CountUp
+                      key={stat.label + "-countup-" + inView} // key to reset animation
+                      start={0}
+                      end={stat.value}
+                      duration={2}
+                      separator=","
+                    />
+                    {stat.suffix}
+                  </>
+                ) : (
+                  `0 ${stat.suffix}`
+                )}
+              </h3>
+              <p className="stat-label mb-0">{stat.label}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

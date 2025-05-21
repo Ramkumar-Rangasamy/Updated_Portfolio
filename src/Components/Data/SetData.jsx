@@ -125,9 +125,9 @@ const setData = {
     ],
     stats: [
       { value: 1, suffix: "+", label: "Year Of Experience" },
-      { value: 30, suffix: "+", label: "Global Happy Clients" },
-      { value: 50, suffix: "+", label: "Project Complete" },
-      { value: 5, suffix: "+", label: "Awards Winner" },
+      { value: 20, suffix: "+", label: "Global Happy Clients" },
+      { value: 40, suffix: "+", label: "Project Complete" },
+      { value: 3, suffix: "+", label: "Awards Winner" },
     ],
   },
   //About Page Data -End-

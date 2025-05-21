@@ -26,9 +26,9 @@ const Experience = () => {
           <h2>Professional Experience</h2>
         </div>
 
-        <div className="row align-items-center g-2 my-2">
+        <div className="row align-items-center gap-4 mx-3">
           {/* Left - Experience years and months */}
-          <div className="col-lg-5 col-12 d-flex flex-column align-items-center justify-content-center">
+          <div className="col-lg-5 col-12 d-flex flex-column align-items-center justify-content-center experience-backgground">
             <img src={dateimage} className='exp-date-image' loading="lazy" alt="Experience Icon" />
             <h1 className="ab-exper-count">
               {years}Y {months}M
@@ -37,7 +37,7 @@ const Experience = () => {
           </div>
 
           {/* Right - Description and Services */}
-          <div className="col-lg-7 col-12 mt-4 d-flex flex-column align-items-start justify-content-center">
+          <div className="col-lg-6 col-12 mt-4 d-flex flex-column align-items-start justify-content-center">
             <h2 className="fw-bold mb-1">React Developer & UI Designer</h2>
             <p className="mb-4">OneYes Infotech Solutions</p>
 

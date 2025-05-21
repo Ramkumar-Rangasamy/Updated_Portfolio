@@ -69,6 +69,13 @@
   background-color: #111;
   transform: translateY(-5px) scale(1.02);
 }
+.experience-backgground{
+  box-shadow: 0 0 10px rgba(64, 18, 128, 0.096);
+  background: #ffffff3b;
+  border-radius: 5px;
+  padding: 25px 0;
+
+}
 
 /* Responsive Styles */
 @media (max-width: 998px) {

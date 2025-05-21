@@ -10,6 +10,7 @@ import Portfolio from "./Pages/Portfolio/Portfolio";
 import Skills from "./Pages/Skills/Skills";
 import Mycertificates from "./Pages/Mycertificates/Mycertificates";
 import Contact from "./Pages/Contact/Contact";
+import Footer from '../Dashboard/Footer/Footer';
 // Import other sections...
 
 const Dashboard = () => {
@@ -89,6 +90,7 @@ const Dashboard = () => {
           <section id="skills"><Skills /></section>
           <section id="certifications"><Mycertificates/></section>
           <section id="contact"><Contact/></section>
+          <section><Footer/></section>
 
           {/* Add other sections wrapped in <section id="..."> */}
         </div>
