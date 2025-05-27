@@ -52,9 +52,9 @@ const Contact = () => {
         </div>
 
       <div className="row">
-        <div className="col-md-6 col-lg-8 order-2 order-md-1">
+        <div className="col-md-6 col-lg-7 order-2 order-md-1">
           <form className='row' ref={form}  onSubmit={sendEmail}>
-              <div className="col-md-12 col-lg-6">
+            <div className="col-md-12 col-lg-6">
                 <input
                   type="text"
                   name="from_name" 
@@ -62,9 +62,9 @@ const Contact = () => {
                   className="form-control"
                   placeholder="Enter your name"
                   required
-                />
-              </div>
-              <div className="col-md-12 col-lg-6">
+                />  
+            </div>
+            <div className="col-md-12 col-lg-6">
                 <input
                   type="email"
                   name="from_email" 
@@ -73,8 +73,8 @@ const Contact = () => {
                   placeholder="Enter your email address"
                   required
                 />
-              </div>
-            <div className="col-md-12">
+            </div>
+            <div className="col-md-12 ">
               <textarea
                 name="message"  
                 id="message"
@@ -91,7 +91,7 @@ const Contact = () => {
             </div>
           </form>
         </div>
-        <div className="col-md-6 col-lg-4 order-1 order-md-2 mb-4">
+        <div className="col-md-6 col-lg-5 order-1 order-md-2 mb-4">
           <div className="contact-info">
             <h5 className="contact-title-information">Contact Information</h5>
             <div className="mb-3">

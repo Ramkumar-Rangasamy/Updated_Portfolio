@@ -33,7 +33,7 @@ import { SiMongodb } from "react-icons/si";
 
 // Sidebar items config
 export const sidebarItems = [
-  { id: "home", label: "Home", icon: BiSolidDashboard },
+  { id: "/", label: "Home", icon: BiSolidDashboard },
   { id: "about", label: "About Me", icon: BiSolidUserPin },
   { id: "service", label: "Service", icon: RiServiceFill },
   { id: "experience", label: "Experience", icon: FaAward },

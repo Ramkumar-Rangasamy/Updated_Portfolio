@@ -26,7 +26,7 @@ const Home = () => {
   };
 
   return (
-    <section id="home" className="home-banner-01 d-flex align-items-center justify-content-center">
+    <section id="/" className="home-banner-01 d-flex align-items-center justify-content-center">
       <div className="container-lg">
         <div className="home-availability-container">
           <span className="home-status-dot" />
@@ -53,7 +53,7 @@ const Home = () => {
               </div>
 
               <div className="btn-bar">
-                <button onClick={() => handleNavClick('Portfolio')} className="px-btn theme">
+                <button onClick={() => handleNavClick('portfolio')} className="px-btn theme">
                   <span>See Portfolio</span>
                 </button>
               </div>

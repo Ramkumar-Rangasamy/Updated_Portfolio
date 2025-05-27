@@ -47,11 +47,10 @@
 .portfolio-img-overlay {
   position: absolute;
   z-index: 2;
-  top: 5px;
-  left: 5px;
-  right: 5px;
-  bottom: 5px;
-
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
   background-color: rgba(0, 0, 0, 0.8);
   opacity: 0;
   transform: scale(1.1);
@@ -107,12 +106,6 @@
   transform: translateY(0);
 }
 
-/* Link styles */
-a {
-  color: #ff6908;
-  text-decoration: none !important;
-  transition: all 0.5s ease-in-out;
-}
 
 /* Modal overlay */
 .modal-overlay {
@@ -135,32 +128,35 @@ a {
   max-width: 900px;
   height: 100%;
   max-height: 95vh;
-  overflow-y: auto;
   position: relative;
   border-radius: 8px;
   padding: 2rem;
-  box-sizing: border-box;
   display: flex;
   flex-direction: column;
 }
 
-.modal-content::-webkit-scrollbar {
-  width: 0px;
-}
-
-
 
 .close-button {
   position: absolute;
-  top: 1rem;
-  right: 1.5rem;
-  bottom: 2rem;
-  font-size: 2rem;
-  display:inline-block;
-  font-weight: bold;
-  color: #333;
+  top: 15px;
+  right: 15px;
+  background-color: white;
+  color: #00000080;
+  border: 2px solid #2E37A41A;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
-  z-index: 10;
+  transition: all 0.3s ease;
+}
+
+.close-button:hover {
+  background-color: #f5f5f5;
+  color: #00000080;
+  border:none
 }
 
 .modal-body {
@@ -169,6 +165,12 @@ a {
   flex-direction: row;
   flex-wrap: wrap;
   margin-top: 3rem;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+.modal-body::-webkit-scrollbar {
+  width: 0px;
 }
 
 .modal-left {
@@ -194,15 +196,14 @@ a {
 }
 
 .key-features-list {
-  padding-left: 1rem;
+  list-style-type: disc; 
+  padding-left: 20px; 
   margin-top: 0.5rem;
 }
 
 .key-features-list li {
   margin-bottom: 0.5rem;
 }
-
-
 
 /* Zoom in animation */
 @keyframes zoomIn {

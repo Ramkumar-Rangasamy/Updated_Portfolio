@@ -20,7 +20,7 @@ const Sidebar = React.memo(({ isOpen, toggleSidebar, activeSection, onNavigate }
     if (window.innerWidth <= 1200) toggleSidebar();
 
     // Update the URL hash based on the section clicked
-    const newHash = id === "home" ? window.location.pathname : `#${id}`;
+    const newHash = id === "/" ? window.location.pathname : `#${id}`;
     if (window.location.hash !== newHash) {
       window.history.pushState(null, "", newHash);
     }

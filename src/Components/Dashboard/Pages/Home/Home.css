@@ -164,7 +164,7 @@
 /* Responsive Styles */
 @media (max-width: 998px) {
   .home-banner-01 {
-    padding:2.5rem;
+    padding:2rem;
   }
 
    .hs-hello {
@@ -182,13 +182,11 @@
 
 @media (max-width: 768px) {
   .home-banner-01 {
-    padding:0.5rem;
-   
+    padding:5rem 0.5rem 4rem 0.5rem;
   }
 
   .mobileview-style {
     text-align: center;
-    margin-bottom: 4rem;
   }
 
   .mobile-tyle-btn-btns {

@@ -26,7 +26,7 @@ const Experience = () => {
           <h2>Professional Experience</h2>
         </div>
 
-        <div className="row align-items-center gap-4 mx-3">
+        <div className="row align-items-center gap-4">
           {/* Left - Experience years and months */}
           <div className="col-lg-5 col-12 d-flex flex-column align-items-center justify-content-center experience-backgground">
             <img src={dateimage} className='exp-date-image' loading="lazy" alt="Experience Icon" />

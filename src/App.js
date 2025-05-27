@@ -1,21 +1,61 @@
-import React from "react";
+import React, { useState, useEffect } from 'react';
 import "./App.css";
 import { Analytics } from '@vercel/analytics/react';
 
-
-
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { BrowserRouter } from "react-router-dom"; // Import BrowserRouter for routing
-import Dashboard from "./Components/Dashboard/Dashboard"; // Your Dashboard component
+import { BrowserRouter } from "react-router-dom";
+import Dashboard from "./Components/Dashboard/Dashboard";
+import Preloader from "./Components/Preloader/Preloader";
 
 function App() {
+  const [loading, setLoading] = useState(true);
+  const [showWelcome, setShowWelcome] = useState(false);
+  const [dontShowAgain, setDontShowAgain] = useState(false);
+
+  useEffect(() => {
+    const skipWelcome = localStorage.getItem('skipWelcomePopup') === 'true';
+
+    // Simulate loading delay for demo; replace with real asset loading or event
+    const timer = setTimeout(() => {
+      setLoading(false);
+      if (!skipWelcome) setShowWelcome(true);
+    }, 2000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  const handleEnterSite = () => {
+    if (dontShowAgain) {
+      localStorage.setItem('skipWelcomePopup', 'true');
+    }
+    setShowWelcome(false);
+  };
+
+  if (loading) return <Preloader />;
+
   return (
     <>
-      <BrowserRouter>  {/* Wrap your app with BrowserRouter */}
-        <div>
+      <BrowserRouter>
+        {showWelcome ? (
+          <div className="welcome-popup">
+            <h2>Preloading Complete!</h2>
+            <p>Thanks for waiting. Welcome to my portfolio.</p>
+
+            <label style={{ display: 'block', marginBottom: '10px', cursor: 'pointer' }}>
+              <input
+                type="checkbox"
+                checked={dontShowAgain}
+                onChange={e => setDontShowAgain(e.target.checked)}
+                style={{ marginRight: '8px' }}
+              />
+              Don't show this again
+            </label>
+
+            <button onClick={handleEnterSite}>Enter Site</button>
+          </div>
+        ) : (
           <Dashboard />
-        
-        </div>
+        )}
       </BrowserRouter>
       <Analytics />
     </>

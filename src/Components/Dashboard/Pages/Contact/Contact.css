@@ -4,21 +4,47 @@
 
 
 .contact-section .form-control {
-    padding:15px 30px;
-    font-weight: 400;
-    font-size: 19px;
-    border: 1px solid rgba(24, 59, 86, 0.25);
-    border-radius: 10px;
-    margin: 0px 0px 24px;
+  padding: 14px 30px;
+  font-weight: 400;
+  font-size: 19px;
+  border: 2px solid #2E37A41A;
+  border-radius: 8px;
+  margin: 0 0 24px;
+  outline: none;
+  transition: border-color 0.3s, box-shadow 0.3s;
 }
+
+/* On focus for regular inputs */
+.contact-section .form-control:focus {
+  box-shadow: 0 0 0 1px rgba(46, 55, 164, 0.2);
+}
+
+/* Autofill styles */
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+  box-shadow: 0 0 0 1000px #fff inset !important;
+  -webkit-text-fill-color: #000 !important;
+  transition: background-color 5000s ease-in-out 0s;
+  border: 2px solid #2E37A41A !important;
+  border-radius: 8px;
+}
+
+/* Autofill + Focus */
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill:focus {
+  box-shadow: 0 0 0 1px rgba(46, 55, 164, 0.2), 0 0 0 1000px #ffffff inset !important;
+  outline: none;
+}
+
 
 
 .contact-info{
     background-color: var( --normal-text);
     color:var(--color-text);
-    border: 1px solid rgba(24, 59, 86, 0.25);
-    border-radius: 10px;
+    border-radius: 8px;
     padding:15px 30px 30px 30px;
+    border: 2px solid #2E37A41A;
 }
  
 .contact-info a {
@@ -44,9 +70,6 @@
     text-transform: capitalize;
 }
 
-
-
-
 @media only screen and (min-width: 768px) and (max-width: 998px) {
     
    .contact-section .form-control {
@@ -56,10 +79,9 @@
     }
 
    .contact-info{
-        padding: 12px 10px 20px 12px;
+        padding: 35px;
     }
     
-
     .contact-title-information{
         font-size: 18px;
         padding-bottom: 6px;

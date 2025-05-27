@@ -1,0 +1,41 @@
+.preloader {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: var(--gradient-bg);
+  display: flex;
+  justify-content:space-around;
+  flex-direction: column;
+  align-items: center;
+  gap:8px;
+  z-index: 9999;
+}
+
+.preloader-sub-content {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap:15px;
+}
+
+.preloader-r-icon-style {
+  font-size: 64px;
+  color: var(--color-text);
+  margin-bottom: 10px;
+}
+
+/* Spinner */
+.spinner {
+  border: 6px solid #ffffff;
+  border-top: 6px solid var(--color-text);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+  margin: 0 auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

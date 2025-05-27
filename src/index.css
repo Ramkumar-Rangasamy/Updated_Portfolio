@@ -122,40 +122,6 @@ button {
   transition: all var(--transition-medium);
 }
 
-/* === Focus Styles === */
-button:focus,
-a:focus,
-input:focus,
-textarea:focus,
-select:focus {
-  outline: 2px solid var(--primary-color);
-  outline-offset: 2px;
-}
-
-/* === Form Elements === */
-input,
-textarea,
-select {
-  font-family: inherit;
-  font-size: inherit;
-  border: 1px solid var(--color-border);
-  padding: var(--padding-input);
-  border-radius: var(--border-radius);
-  transition: border var(--transition-medium);
-}
-
-input:focus,
-textarea:focus,
-select:focus {
-  border-color: var(--primary-color);
-}
-
-
-/* === Accessibility Improvement === */
-:focus:not(:focus-visible) {
-  outline: none;
-}
-
 @media (max-width: 1200px) {
   :root {
     --font-xl: 2.8rem;
