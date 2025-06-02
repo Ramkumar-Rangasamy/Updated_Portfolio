@@ -59,6 +59,10 @@
   outline: none !important;
 }
 
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
 html, body {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
@@ -74,6 +78,12 @@ html, body {
   min-height: 100vh;
   overflow-x: hidden;
   text-align: left;
+  transform: translateZ(0); /* Forces GPU layer */
+
+}
+
+.container,.container-lg {
+  word-break: break-word;
 }
 
 /* === Gradient Background Animation === */

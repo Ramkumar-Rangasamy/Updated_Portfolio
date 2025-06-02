@@ -4,7 +4,6 @@
   box-shadow: 0 -10px 80px var(--background-bg);
   padding: 2rem 1rem;
   transition: background 0.3s ease;
-  width: 100%;
 }
 
 .footer-container {

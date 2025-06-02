@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import "./App.css";
+import { Helmet } from 'react-helmet';
 import { Analytics } from '@vercel/analytics/react';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -35,6 +36,11 @@ function App() {
 
   return (
     <>
+      <Helmet>
+        <title>Ram Portfolio</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Helmet>
+
       <BrowserRouter>
         {showWelcome ? (
           <div className="welcome-popup">

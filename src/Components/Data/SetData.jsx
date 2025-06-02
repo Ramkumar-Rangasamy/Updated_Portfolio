@@ -124,7 +124,7 @@ const setData = {
       },
     ],
     stats: [
-      { value: 1, suffix: "+", label: "Year Of Experience" },
+      { value: 0, suffix: "+", label: "Year Of Experience" },
       { value: 20, suffix: "+", label: "Global Happy Clients" },
       { value: 40, suffix: "+", label: "Project Complete" },
       { value: 3, suffix: "+", label: "Awards Winner" },

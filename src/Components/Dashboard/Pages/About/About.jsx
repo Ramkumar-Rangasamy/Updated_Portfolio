@@ -4,20 +4,39 @@ import { useInView } from "react-intersection-observer";
 import "./About.css";
 import SetData from "../../../Data/SetData";
 
+// Calculate years and months of experience
+const calculateExperience = (startDate) => {
+  const start = new Date(startDate);
+  const now = new Date();
+  let years = now.getFullYear() - start.getFullYear();
+  let months = now.getMonth() - start.getMonth();
+  if (months < 0) {
+    years--;
+    months += 12;
+  }
+  return { years, months };
+};
+
 const About = () => {
   const { aboutData } = SetData;
+  const experienceStartDate = "March 01, 2024";
+  const { years, months } = calculateExperience(experienceStartDate);
 
-  // Animate every time the stats section scrolls into view
-  const { ref, inView } = useInView({
-    triggerOnce: false, // re-trigger every time
-    threshold: 0.3,
-  });
+  // Update experience stat dynamically
+  const updatedStats = aboutData.stats.map((stat) =>
+    stat.label === "Year Of Experience"
+      ? {
+          ...stat,
+          value: parseFloat((years + months / 12).toFixed(1)),
+          suffix: "+",
+          label: "Year Of Experience",
+        }
+      : stat
+  );
+
+  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.3 });
 
   const handleDownload = () => {
-    // Open in new tab
-    window.open(aboutData.cv, "_blank");
-
-    // Trigger download
     const link = document.createElement("a");
     link.href = aboutData.cv;
     link.setAttribute("download", "Ramkumar_resume.pdf");
@@ -26,18 +45,16 @@ const About = () => {
     document.body.removeChild(link);
   };
 
-  // 👉 handle scroll to section
   const handleNavClick = (id) => {
     const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
+    element?.scrollIntoView({ behavior: "smooth" });
   };
+
 
   return (
     <section id="about" className="about-section">
       <div className="container-lg">
-        <div className="row align-items-center g-4">
+        <div className="row align-items-center gy-5">
           <div className="col-lg-5 order-2 order-lg-1">
             <div className="d-flex flex-column align-items-center justify-content-center h-100">
               <img
@@ -50,7 +67,7 @@ const About = () => {
           </div>
 
           <div className="col-lg-7 order-lg-2 right-size-about">
-            <h2 className="order-1 py-2">{aboutData.heading}</h2>
+            <h2 className="py-2">{aboutData.heading}</h2>
             <p className="mb-4">{aboutData.description}</p>
 
             <div className="info-cards d-flex flex-wrap">
@@ -66,17 +83,10 @@ const About = () => {
             </div>
 
             <div className="button-group d-flex gap-3 mt-3">
-              <button
-                onClick={handleDownload}
-                className="btn-glass download-btn"
-              >
+              <button onClick={handleDownload} className="btn-glass download-btn">
                 Download CV
               </button>
-
-              <button
-                className="btn-glass contact-btn"
-                onClick={() => handleNavClick("contact")}
-              >
+              <button className="btn-glass contact-btn" onClick={() => handleNavClick("contact")}>
                 Contact Us
               </button>
             </div>
@@ -84,25 +94,26 @@ const About = () => {
         </div>
       </div>
 
-      {/* Scroll-triggered count up */}
+      {/* Stats Section */}
       <div className="container">
         <div className="stats row" ref={ref}>
-          {aboutData.stats?.map((stat, index) => (
-            <div key={index} className="stat-item col-6 col-lg pb-5">
+          {updatedStats.map((stat, index) => (
+            <div key={index} className="stat-item col-6 col-lg py-4">
               <h3 className="stat-number">
                 {inView ? (
                   <>
                     <CountUp
-                      key={stat.label + "-countup-" + inView} // key to reset animation
+                      key={stat.label + "-countup-" + inView}
                       start={0}
-                      end={stat.value}
+                      end={parseFloat(stat.value)}
                       duration={2}
+                      decimals={stat.label.includes("Experience") ? 1 : 0}
                       separator=","
                     />
                     {stat.suffix}
                   </>
                 ) : (
-                  `0 ${stat.suffix}`
+                  `0${stat.suffix}`
                 )}
               </h3>
               <p className="stat-label mb-0">{stat.label}</p>
