@@ -114,14 +114,20 @@ const portfolioItems = [
 
 const Portfolio = () => {
   const [selectedImage, setSelectedImage] = useState(null);
+  const [isClosing, setIsClosing] = useState(false);
 
-   const openModal = (project) => {
+  const openModal = (project) => {
+    setIsClosing(false);
     setSelectedImage(project);
   };
 
-  const closeModal = () => {
-    setSelectedImage(null);
-  };
+
+const closeModal = () => {
+  setIsClosing(true);             // Trigger zoom-out class
+  setTimeout(() => {
+    setSelectedImage(null);       // Actually unmount modal after animation
+  }, 300); // match CSS animation duration
+};
 
   return (
     <section className="portfolio-section" id="portfolio">
@@ -158,14 +164,15 @@ const Portfolio = () => {
 
         {selectedImage && (
           <div className="modal-overlay">
-            <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+           <div className={`modal-content ${isClosing ? "zoom-out" : "zoom-in"}`} onClick={(e) => e.stopPropagation()}>
               <span className="close-button" onClick={closeModal}><IoClose  size="1.5rem"/></span>
               <div className="modal-body">
+
                 <div className="modal-left">
-                   <h2>{selectedImage.title}</h2>
+                  <h2>{selectedImage.title}</h2>
                   <img src={selectedImage.image} alt={selectedImage.title} />
-                 
                 </div>
+
                 <div className="modal-right">
                   <p><strong>Technologies Used:</strong> {selectedImage.TechStack}</p>
                   <p><strong>Overview:</strong> {selectedImage.Overview}</p>
@@ -181,6 +188,7 @@ const Portfolio = () => {
                     </div>
                   )}
                 </div>
+
               </div>
             </div>
           </div>

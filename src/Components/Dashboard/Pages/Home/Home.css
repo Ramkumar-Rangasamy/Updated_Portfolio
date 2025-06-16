@@ -161,18 +161,6 @@
   font-size: 1rem;
 }
 
-/* Animation base */
-.animate {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-}
-
-/* When in viewport */
-.animate.show {
-  opacity: 1;
-  transform: translateY(0);
-}
 
 /* Responsive Styles */
 @media (max-width: 998px) {

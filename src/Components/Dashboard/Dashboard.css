@@ -36,23 +36,16 @@
 
 @media (max-width: 998px) {
   .dashboard-container {
-    flex-direction: column; /* Stack items vertically */
+    display: flex; /* ⬅️ Add this */
+    flex-direction: column,
   }
 
   .main-content {
     width: 100%;
     margin-left: 0 !important;
+    padding: 0;
     box-sizing: border-box;
-    overflow-x: hidden; /* Prevent horizontal scroll */
-  }
-
-  .sidebar {
-    width: 100%;
-    box-sizing: border-box;
-  }
-
-  body, html {
-    overflow-x: hidden; /* Ensure no horizontal scroll globally */
+    overflow-x: hidden;
   }
 }
 
