@@ -34,7 +34,7 @@ const About = () => {
       : stat
   );
 
-  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.3 });
+  const { ref, inView } = useInView({ triggerOnce: false, threshold: 0.3 });
 
   const handleDownload = () => {
     const link = document.createElement("a");
@@ -49,7 +49,6 @@ const About = () => {
     const element = document.getElementById(id);
     element?.scrollIntoView({ behavior: "smooth" });
   };
-
 
   return (
     <section id="about" className="about-section">
@@ -103,7 +102,7 @@ const About = () => {
                 {inView ? (
                   <>
                     <CountUp
-                      key={stat.label + "-countup-" + inView}
+                      key={`${stat.label}-${inView}`}
                       start={0}
                       end={parseFloat(stat.value)}
                       duration={2}

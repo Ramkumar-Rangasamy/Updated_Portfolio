@@ -123,9 +123,9 @@ const Portfolio = () => {
 
 
 const closeModal = () => {
-  setIsClosing(true);             // Trigger zoom-out class
+  setIsClosing(true);           
   setTimeout(() => {
-    setSelectedImage(null);       // Actually unmount modal after animation
+    setSelectedImage(null);     
   }, 300); // match CSS animation duration
 };
 
@@ -144,17 +144,14 @@ const closeModal = () => {
           {portfolioItems.map((project) => (
             <div
               key={project.id}
-              className="col-lg-4 col-md-6 portfolio-grid-item all photography"
+              className="col-lg-4 col-md-6 portfolio-grid-item"
             >
-              <div
-                className="portfolio-item"
-              
-              >
+              <div className="portfolio-item">
                 <img src={project.image} alt={project.title} />
                 <div className="portfolio-img-overlay">
                   <div className="portfolio-content">
                     <h4>{project.title}</h4>
-                    <h6  onClick={() => openModal(project)}>View Portfolio</h6>
+                    <h6 onClick={() => openModal(project)}>View Portfolio</h6>
                   </div>
                 </div>
               </div>
