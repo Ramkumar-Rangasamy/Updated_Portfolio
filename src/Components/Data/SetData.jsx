@@ -30,13 +30,26 @@ import { FaNode } from "react-icons/fa";
 import { FaJava } from "react-icons/fa6";
 import { SiMysql } from "react-icons/si";
 import { SiMongodb } from "react-icons/si";
+import { FaGithub } from "react-icons/fa";
+import { FaRobot } from "react-icons/fa";
+import {
+  FaBootstrap,
+  FaCode,
+  FaPaintBrush ,
+  FaGlobe,
+  FaProjectDiagram,
+  FaNetworkWired,
+  FaSpinner,
+  FaChartLine,
+} from "react-icons/fa";
+import { SiVite, SiPostman} from "react-icons/si";
 
 // Sidebar items config
 export const sidebarItems = [
   { id: "/", label: "Home", icon: BiSolidDashboard },
   { id: "about", label: "About Me", icon: BiSolidUserPin },
   { id: "service", label: "Service", icon: RiServiceFill },
-  { id: "experience", label: "Experience", icon: FaAward },
+  { id: "myjourney", label: "My Journey", icon: FaAward },
   { id: "portfolio", label: "Portfolio", icon: BiSolidSpreadsheet },
   { id: "skills", label: "Skills", icon: TbRosetteDiscountCheckFilled },
   { id: "certifications", label: "Certifications", icon: PiNewspaperClippingFill },
@@ -46,8 +59,6 @@ export const sidebarItems = [
 // General site settings
 const setData = {
   logo: "Ram",
-
-  navLinks: ["Home", "About", "Service", "Portfolio", "Blog", "Contact"],
 
   home: {
     name: "Ram Kumar R",
@@ -101,6 +112,31 @@ const setData = {
     },
   ],
 
+  education: [
+    {
+      year: "Jun 2018 – May 2021",
+      degree: "B.Sc in Information Technology",
+      desc: "CMS College of Science and Commerce, affiliated to Bharathiar University"
+    },
+    {
+      year: "Jan 2016 – Apr 2018",
+      degree: "Higher Secondary Certificate (HSC)",
+      desc: "Mamaharishi Easwarya Gurukulam Matriculation Higher Secondary School"
+    },
+    {
+      year: "Jun 2014 – Apr 2016",
+      degree: "Secondary School Leaving Certificate (SSLC)",
+      desc: "Mamaharishi Easwarya Gurukulam Matriculation Higher Secondary School"
+    }
+  ],
+
+  experience: [
+    {
+      year: "Mar 2024 – Present",
+      role: "Software Developer",
+      desc: "Building dynamic web apps with React.js and REST APIs at OneYes Infotech, collaborating in agile teams to deliver scalable solutions."
+    }
+  ],
   
   //About Page Data -Start-
   aboutData: {
@@ -166,6 +202,57 @@ const setData = {
       icon: <SiMysql size={30} color="#00758f" />,
       title: "MySQL",
     },
+    {
+      icon: <FaRobot size={30} color="#10A37F" />,
+      title: "ChatGPT",
+    },
+    {
+      icon: <FaGithub size={30} color="#181717" />,
+      title: "Git & GitHub",
+    },
+     
+    {
+      icon: <FaBootstrap size={30} color="#7952B3" />,
+      title: "Bootstrap",
+    },
+    {
+      icon: <FaProjectDiagram size={30} color="#00BFA6" />,
+      title: "Agile / Scrum",
+    },
+    {
+      icon: <SiVite size={30} color="#646CFF" />,
+      title: "Vite",
+    },
+    {
+      icon: <SiPostman size={30} color="#FF6C37" />,
+      title: "Postman",
+    },
+   {
+      icon: <FaSpinner  size={30} color="#00A86B" />,
+      title: "Lazy Loading",
+    },
+    {
+      icon: <FaNetworkWired size={30} color="#3F51B5" />,
+      title: "REST APIs",
+    },
+    {
+      icon: <FaCode size={30} color="#4CAF50" />,
+      title: "Code Splitting",
+    },
+    {
+      icon: <FaChartLine size={30} color="#0A66C2" />,
+      title: "SEO Basics",
+    },
+    {
+      icon: <FaPaintBrush  size={30} color="#4B32C3" />,
+      title: "Prettier",
+    },
+    {
+      icon: <FaGlobe size={30} color="#007ACC" />,
+      title: "Cross-Browser",
+    },
+
+   
   ],
   //Skills Data---End
   

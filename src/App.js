@@ -37,8 +37,12 @@ function App() {
   return (
     <>
       <Helmet>
-        <title>Ram Portfolio</title>
+        <title>Ramkumar Portfolio</title>
         <link rel="icon" href="/favicon.ico" />
+        <meta property="og:description" content="Explore my projects, skills, and experience as a Software  Developer." />
+        <meta property="og:image" content="https://ramkumar-portfolio-xi.vercel.app/favicon.ico" />
+        <meta property="og:url" content="https://ramkumar-portfolio-xi.vercel.app" />
+        <meta property="og:type" content="website" />
       </Helmet>
 
       <BrowserRouter>

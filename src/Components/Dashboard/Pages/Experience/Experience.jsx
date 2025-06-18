@@ -1,80 +1,50 @@
 import React from 'react';
-import { BiSolidChevronRightCircle } from "react-icons/bi";
+import SetData from '../../../Data/SetData';
 import './Experience.css';
-import dateimage from '../../../../Assets/date-icon.png';
-
-const calculateExperience = (startDate) => {
-  const start = new Date(startDate);
-  const now = new Date();
-  let years = now.getFullYear() - start.getFullYear();
-  let months = now.getMonth() - start.getMonth();
-  if (months < 0) {
-    years--;
-    months += 12;
-  }
-  return { years, months };
-};
 
 const Experience = () => {
-  const experienceStartDate = "March 01, 2024";
-  const { years, months } = calculateExperience(experienceStartDate);
+  const { education, experience } = SetData;
 
   return (
-    <section id="experience" className="experience-section">
+    <section id="myjourney" className="experience-section">
       <div className="container-lg">
-        <div className="title-container mb-4">
-          <h2>Professional Experience</h2>
+        <div className="title-container mb-5">
+          <h2>Career Timeline</h2>
+          <p className="col-12 col-md-6">A snapshot of my journey through academic achievements and hands-on professional experiences that have shaped my skills, mindset, and growth as a developer."</p>
         </div>
 
-        <div className="row align-items-center gap-4">
-          {/* Left - Experience years and months */}
-          <div className="col-lg-5 col-12 d-flex flex-column align-items-center justify-content-center experience-backgground">
-            <img src={dateimage} className='exp-date-image' loading="lazy" alt="Experience Icon" />
-            <h1 className="ab-exper-count">
-              {years}Y {months}M
-            </h1>
-            <p className="ab-content">Years Of Experience Working</p>
-          </div>
-
-          {/* Right - Description and Services */}
-          <div className="col-lg-6 col-12 mt-4 d-flex flex-column align-items-start justify-content-center">
-            <h2 className="fw-bold mb-1">React Developer & UI Designer</h2>
-            <p className="mb-4">OneYes Infotech Solutions</p>
-
-            {/* 3 Points */}
-            <div className="row">
-              <div className="col-12 mb-3 d-flex flex-column align-items-start">
-                <div className="d-flex align-items-start">
-                  <BiSolidChevronRightCircle className='me-2 color-style exp-icon' />
-                  <h5 className="exp-company-title">Creative UI Development</h5>
-                </div>  
-                <p className="p-2 pt-0 pb-0 line-spaceing-experience">
-                  Gained real-time project experience in designing responsive UIs, focusing on clean layout and accessibility across all screen sizes.
-                </p>
-              </div>
-
-              <div className="col-12 mb-3 d-flex flex-column align-items-start">
-                <div className="d-flex align-items-start">
-                  <BiSolidChevronRightCircle className="me-2 color-style exp-icon" />
-                  <h5 className="exp-company-title">Dashboard Projects</h5>
+        <div className="row">
+          {/* Education Section */}
+          <div className="col-md-6">
+            <header className="title mb-3 ps-3">
+              <h3>EDUCATION</h3>
+            </header>
+            <div className="contents border-start ps-3">
+              {education.map((edu, index) => (
+                <div className="box" key={index}>
+                  <h4>{edu.year}</h4>
+                  <h3>{edu.degree}</h3>
+                  <p>{edu.desc}</p>
                 </div>
-                <p className="p-2 pt-0 pb-0 line-spaceing-experience">
-                  Worked on complete dashboard structures — implementing layouts, state management, and connecting UI logic in React efficiently.
-                </p>
-              </div>
-
-              <div className="col-12 mb-3 d-flex flex-column align-items-start">
-                <div className="d-flex align-items-start">
-                 <BiSolidChevronRightCircle className="me-2 color-style exp-icon" />
-                 <h5 className="exp-company-title">Clean Code & Integration</h5>
-                </div>
-                <p className="p-2 pt-0 line-spaceing-experience">
-                  I take pride in translating designs into production-ready React code with proper structure, reusability, and responsive behavior.
-                </p>
-              </div>
+              ))}
             </div>
           </div>
 
+          {/* Experience Section */}
+          <div className="col-md-6 mt-4 mt-md-0">
+            <header className="title mb-3 ps-3">
+              <h3>EXPERIENCE</h3>
+            </header>
+            <div className="contents border-start ps-3">
+              {experience.map((exp, index) => (
+                <div className="box" key={index}>
+                  <h4>{exp.year}</h4>
+                  <h3>{exp.role}</h3>
+                  <p>{exp.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>

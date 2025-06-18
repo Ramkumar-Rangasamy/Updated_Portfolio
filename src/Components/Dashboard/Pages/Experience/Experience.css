@@ -1,8 +1,3 @@
-:root {
-  --highlight-exp: #007bff;
-}
-
-/* Section Wrapper */
 .experience-section {
   background-image: url("../../../../Assets/experience.png");
   background-repeat: no-repeat;
@@ -10,89 +5,48 @@
   padding: 2rem 1rem;
 }
 
-/* Left Side Image */
-.exp-date-image {
-  width: 180px;
-}
-
-/* Experience Count */
-.ab-exper-count {
-  font-size: clamp(2.5rem, 5vw, 4em);
-  font-weight: 600;
-  color: var(--text-dark);
-  margin-top: 1rem;
-}
-
-/* Description Text */
-.ab-content {
-  font-size: 18px;
-  line-height: 32px;
-  font-weight: 600;
-  color: var(--text-dark);
-  text-transform: capitalize;
-}
-
-/* Arrow Icon Color */
-.color-style {
-  color: var(--highlight-exp);
-  margin-right: 15px;
-}
-
-/* Title under each point */
-.exp-company-title {
-  margin-bottom: 5px;
-  padding: 0;
-  font-weight: 600;
-}
-.line-spaceing-experience{
-    color: var(--color-text);
-    line-height: 1.6;
-}
-/* Icon Sizing and Alignment */
-.exp-icon {
-  font-size: 1.5rem; /* Default icon size */
-  vertical-align: middle;
-}
-
-/* Hover Effects for Cards */
-.experience-card {
-  transition: all 0.3s ease;
+.contents .box {
+  position: relative;
+  padding: 20px;
+  width: 100%;
+  border: 1px solid #eaeaea;
+  background-color: #fff;
+  margin-bottom: 20px;
+  transition: all 0.4s;
   cursor: pointer;
 }
 
-.experience-card.bg-light:hover {
-  background-color: #f1f1f1;
-  transform: translateY(-5px) scale(1.02);
+.contents .box:hover {
+  box-shadow: 0px 3px 12px 0px #ccc;
+  border: 1px solid transparent;
 }
 
-.experience-card.bg-dark:hover {
-  background-color: #111;
-  transform: translateY(-5px) scale(1.02);
+.contents .box::before {
+  content: '';
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	right: calc(100% + 6.5px);
+	top: -1px;
+	background-color:  var(--color-text);
+	border: 2.5px solid #ceedfa;
 }
-.experience-backgground{
-  box-shadow: 0 0 10px rgba(64, 18, 128, 0.096);
-  background: #ffffff3b;
-  border-radius: 5px;
-  padding: 25px 0;
 
+.box h4 {
+  color: var(--color-text);
+  font-weight: 700;
+  font-size: 20px;
 }
 
-/* Responsive Styles */
-@media (max-width: 998px) {
-  .experience-section {
-    padding: 1rem;
-  }
+.box h3 {
+  font-size: 18px;
+  padding: 5px 0 5px;
+  color: #444;
+}
 
-  .ab-exper-count {
-    font-size: 2.5rem;
-  }
-
-  .ab-content {
-    font-size: 16px;
-    line-height: 28px;
-  }
-
-  .exp-date-image {
-    width: 140px;
-  }
+.box p {
+  line-height: 1.5;
+  color: #666;
+  font-size: 16px;
 }

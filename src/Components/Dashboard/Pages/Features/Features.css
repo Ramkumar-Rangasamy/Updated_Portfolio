@@ -48,6 +48,7 @@
   width: 55px;
   height: 55px;
   margin-bottom: 1rem;
+  margin-top: 10px;
 }
 
 .icon-shadow {
@@ -98,11 +99,6 @@
     padding: 1rem !important;
   }
 
-  .icon-image {
-    width: 45px;
-    height: 45px;
-    font-size: 20px;
-  }
 
   .feature-card p {
     font-size: 14px;
