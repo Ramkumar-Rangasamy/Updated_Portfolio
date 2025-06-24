@@ -39,7 +39,7 @@ const About = () => {
   const handleDownload = () => {
     const link = document.createElement("a");
     link.href = aboutData.cv;
-    link.setAttribute("download", "Ramkumar_resume.pdf");
+    link.setAttribute("download", "Ramrrr_Resume.pdf");
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);

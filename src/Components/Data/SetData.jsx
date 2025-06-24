@@ -1,15 +1,16 @@
-//image import 
+//abouts image import 
 import aboutprofileimg from '../../Assets/aboutprofile.jpg'
-import download from '../../Assets/Ramkumar.pdf';
+import download from '../../Assets/Ramrrr_Resume.pdf';
+
 //image import certificates
 import kgislcollege from '../../Assets/Microcollege-Logo.jpeg'
 import metalogo from '../../Assets/Metalogo.png'
 import courseraprojectnetwork from '../../Assets/coursera-projectnetwork-purplesquare.png'
 import LearnQuest from '../../Assets/LearnQuest.png'
-//react-icons 
+ 
+//react-icons
 //Home page icon
 import { CgArrowRight } from "react-icons/cg";
-
 import { BiSolidDashboard, BiSolidUserPin, BiSolidSpreadsheet } from "react-icons/bi";
 import { FaAward, FaLightbulb, FaLaptopCode } from "react-icons/fa";
 import { TbRosetteDiscountCheckFilled } from "react-icons/tb";
@@ -18,21 +19,19 @@ import { FaSquarePhone } from "react-icons/fa6";
 import { FiMenu, FiBookOpen } from "react-icons/fi";
 import { MdOutlineLiveTv } from "react-icons/md";
 import { RiServiceFill } from "react-icons/ri";
-import { MdDevices } from "react-icons/md"; // 📱 For Responsiveness
+import { MdDevices } from "react-icons/md";
 import { Bs1CircleFill, Bs2CircleFill } from "react-icons/bs";
 
 //skills
-import { FaReact } from "react-icons/fa";
 import { IoLogoJavascript } from "react-icons/io";
-import { PiFileHtmlFill } from "react-icons/pi";
-import { PiFileCssFill } from "react-icons/pi";
+import { PiFileHtmlFill,PiFileCssFill } from "react-icons/pi";
 import { FaNode } from "react-icons/fa";
 import { FaJava } from "react-icons/fa6";
-import { SiMysql } from "react-icons/si";
-import { SiMongodb } from "react-icons/si";
-import { FaGithub } from "react-icons/fa";
-import { FaRobot } from "react-icons/fa";
+import { SiMysql, SiMongodb, SiVite, SiPostman } from "react-icons/si";
 import {
+  FaReact,
+  FaGithub,
+  FaRobot,
   FaBootstrap,
   FaCode,
   FaPaintBrush ,
@@ -42,7 +41,6 @@ import {
   FaSpinner,
   FaChartLine,
 } from "react-icons/fa";
-import { SiVite, SiPostman} from "react-icons/si";
 
 // Sidebar items config
 export const sidebarItems = [
@@ -59,7 +57,6 @@ export const sidebarItems = [
 // General site settings
 const setData = {
   logo: "Ram",
-
   home: {
     name: "Ram Kumar R",
     role: "React Developer",
@@ -73,6 +70,7 @@ const setData = {
     homerightarrow:<CgArrowRight size="1.5rem" className="arrow"/>,
   },
 
+  //Features data ste here -Start-
   FeaturesDatas: [
     {
       icon:<MdDevices />,
@@ -111,7 +109,9 @@ const setData = {
         "Improve loading speeds and user experience through efficient coding practices, lazy loading, and code splitting.",
     },
   ],
-
+  //Features data ste here -End-
+ 
+  //education and experience -Start-
   education: [
     {
       year: "Jun 2018 – May 2021",
@@ -137,7 +137,8 @@ const setData = {
       desc: "Building dynamic web apps with React.js and REST APIs at OneYes Infotech, collaborating in agile teams to deliver scalable solutions."
     }
   ],
-  
+  //education and experience -End-
+
   //About Page Data -Start-
   aboutData: {
     image: aboutprofileimg,
@@ -168,7 +169,7 @@ const setData = {
   },
   //About Page Data -End-
 
-  //Skills Data---Start
+  //Skills Data -Start-
   skills: [
     {
       icon: <FaReact size={30} color="#61DBFB" />,
@@ -227,7 +228,7 @@ const setData = {
       icon: <SiPostman size={30} color="#FF6C37" />,
       title: "Postman",
     },
-   {
+    {
       icon: <FaSpinner  size={30} color="#00A86B" />,
       title: "Lazy Loading",
     },
@@ -251,13 +252,10 @@ const setData = {
       icon: <FaGlobe size={30} color="#007ACC" />,
       title: "Cross-Browser",
     },
-
-   
   ],
-  //Skills Data---End
+  //Skills Data -End-
   
-  // certificates Data---Start
-
+  // certificates Data -Start-
   certificates: [
     {
       logimage:kgislcollege,
@@ -314,16 +312,15 @@ const setData = {
       link: "https://coursera.org/share/1c60025f0b95de2170d04a2d9b81f12c"
     },
   ],
-  // certificates Data---End
+  // certificates Data -End-
 
-   // Contact Data - Start
-    contact: {
-      email: "ramkumar.rangaraj7@gmail.com",
-      phone: "+91 994 489 7180",
-      address: "Coimbatore, Tamil Nadu-641 302"
-    }
-    // Contact Data - End
-
+  // Contact Data -Start-
+  contact: {
+    email: "ramkumar.rangaraj7@gmail.com",
+    phone: "+91 99448 97180",
+    address: "Coimbatore, Tamil Nadu, IN 641-302"
+  }
+  // Contact Data -End-
 };
 
 export default setData;
